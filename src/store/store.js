@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import app from './app';
+import landing from './landing';
 
 export const store = configureStore({
-  reducer: { app },
+  reducer: { landing },
 });
