@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
 import { FaLinkedin, FaPhoneAlt } from 'react-icons/fa';
+import { useLinkedIn } from 'react-linkedin-login-oauth2';
 
 const LogIn = () => {
   const [form, setForm] = useState(false);
 
-  const handleSignUpLinkedIn = () => {
-    setForm(false);
-    alert('linkedin!');
+  const handleSignUpPhone = () => {
+    alert('mobile');
   };
+
+  const { linkedInLogin } = useLinkedIn({
+    clientId: '78skdzmjsq9y4b',
+    redirectUri: `${window.location.origin}/linkedin`,
+    scope: ['r_liteprofile', 'r_emailaddress'],
+    onSuccess: (code) => {
+      console.log(code);
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+  });
 
   return (
     <>
@@ -20,7 +32,7 @@ const LogIn = () => {
 
           <div
             className='h-14 bg-gray-200 mt-16 mx-5 rounded-lg'
-            onClick={handleSignUpLinkedIn}
+            onClick={linkedInLogin}
           >
             <div className='flex h-full justify-center items-center'>
               <FaLinkedin className='text-2xl fill-[#0072b1]' />
@@ -56,7 +68,7 @@ const LogIn = () => {
           </div>
           <div
             className='h-14 bg-blue-500 mt-16 mx-16 rounded-lg'
-            onClick={handleSignUpLinkedIn}
+            onClick={console.log('hola')}
           >
             <div className='flex h-full justify-center items-center '>
               <p className='pl-2 font-medium text-white'>Sign up</p>
