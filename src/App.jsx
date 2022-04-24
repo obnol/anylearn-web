@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { LinkedInCallback } from 'react-linkedin-login-oauth2';
 import LogIn from './app/auth/LogIn';
 import Signup from './app/auth/SignUp';
-import Home from './app/auth/Home';
+import Home from './app/home/Home';
 
 function App() {
   return (
