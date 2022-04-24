@@ -3,15 +3,22 @@ import { FaLinkedin, FaPhoneAlt } from 'react-icons/fa';
 import { AiFillMail } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
 import { useLinkedIn } from 'react-linkedin-login-oauth2';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState(false);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [name, setName] = useState(null);
   const [lastName, setLastName] = useState(null);
 
-  const handleSignUp = () => {};
+  const handleSignUp = () => {
+    if (email && password && name && lastName) {
+      navigate('/');
+    }
+  };
 
   const { linkedInLogin } = useLinkedIn({
     clientId: '78skdzmjsq9y4b',
@@ -19,6 +26,7 @@ const Signup = () => {
     scope: ['r_liteprofile', 'r_emailaddress'],
     onSuccess: (code) => {
       console.log(code);
+      navigate('/');
     },
     onError: (error) => {
       console.log(error);
