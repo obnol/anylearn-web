@@ -17,6 +17,7 @@ const LogIn = () => {
     scope: ['r_liteprofile', 'r_emailaddress'],
     onSuccess: (code) => {
       console.log('CODE', code);
+      // send request to backend
 
       // const { access_token } = response.data;
       // console.log(access_token);
@@ -25,7 +26,7 @@ const LogIn = () => {
       // const { data: token } = await authService.login({ email, password });
       // localStorage.setItem('token', token);
       // localStorage.setItem('user', JSON.stringify({ email, firstName, lastName }));
-      // navigate('/');
+      navigate('/');
     },
     onError: (error) => {},
   });
@@ -81,6 +82,8 @@ const LogIn = () => {
       </div>
       <p className='flex justify-center items-center pt-5 text-slate-500 text-xs text-center'>
         New to AnyLearn?
+      </p>
+      <p className='flex justify-center items-center pt-1 text-slate-500 text-xs text-center'>
         <Link to='/signup' className='text-blue-500'>
           Create an account.
         </Link>
