@@ -26,7 +26,7 @@ const OfferCard = ({offer}) =>
             <CardContent>
                 <Typography variant="title">
                     {offer.title}
-                </Typography>
+                </Typography>               
             </CardContent>
             </Card>
         </div>

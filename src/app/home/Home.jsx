@@ -1,3 +1,4 @@
+import { Grid } from '@material-ui/core';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import OfferCard from './components/OfferCard';
@@ -9,9 +10,11 @@ const Home = () => {
     title: "BASED",
     description: "la risa va por barrios",
   };
-  return <div className='flex flex-col justify-center items-center pt-24 text-2xl font-medium'>
-    <OfferCard offer={oferta}/>
-  </div>;
-  };
+  return (
+  <div className='flex flex-col justify-center items-center pt-24 text-2xl font-medium'>
+      <OfferCard offer={oferta}/>
+  </div>
+  );
+}
 
 export default Home;
