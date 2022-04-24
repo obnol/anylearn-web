@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaLinkedin, FaPhoneAlt } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import { AiFillMail } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
 import { useLinkedIn } from 'react-linkedin-login-oauth2';
