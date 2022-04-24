@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { useLinkedIn } from 'react-linkedin-login-oauth2';
 import { Link, useNavigate } from 'react-router-dom';
