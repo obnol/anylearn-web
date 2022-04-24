@@ -11,9 +11,7 @@ const Signup = () => {
   const [name, setName] = useState(null);
   const [lastName, setLastName] = useState(null);
 
-  const handleSignUp = () => {
-    alert('mobile');
-  };
+  const handleSignUp = () => {};
 
   const { linkedInLogin } = useLinkedIn({
     clientId: '78skdzmjsq9y4b',
