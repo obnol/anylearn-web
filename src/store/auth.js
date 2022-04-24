@@ -4,10 +4,10 @@ const initialState = {
   loading: false,
 };
 
-export const appSlice = createSlice({
+export const authSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {},
 });
 
-export default appSlice.reducer;
+export default authSlice.reducer;
