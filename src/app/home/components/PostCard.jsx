@@ -12,8 +12,9 @@ const useStyles = makeStyles({
 
 const PostCard = ({card}) =>
 {
+    console.log(card);
     return (
-        <div class='relative overflow-hidden'>               
+        <div className='relative mx-2 overflow-hidden'>               
           <img
             src={card.image}
             class='object-cover w-full h-full rounded-md'

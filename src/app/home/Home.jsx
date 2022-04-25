@@ -8,13 +8,7 @@ const Home = () => {
     <>
       <Header />
       <SearchBar />
-      {
-        data.map((item,index) => {
-          return(
-          <PopularCategories key={index} list={item}/>
-          );
-        })
-      }
+      <PopularCategories/>
     </>
   );
 };
