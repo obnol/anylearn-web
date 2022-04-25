@@ -7,7 +7,7 @@ import Dummy from '../dummy.json';
 
 const Home = () => {
   useEffect(() => {
-    fetch('http://vgafib.org:9090/swagger/index.html')
+    fetch('https://vgafib.org:9091/WeatherForecast')
       .then((response) => response.json())
       .then((data) => console.log(data));
   }, []);
