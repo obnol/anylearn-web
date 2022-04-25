@@ -1,0 +1,202 @@
+[
+  {
+    "type": "Ciencias naturales",
+    "courses": [
+      {
+        "title": "Curso de ciencias naturales",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias naturales",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias naturales",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias naturales",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias naturales",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      }
+    ]
+  },
+  {
+    "type": "Ciencias sociales",
+    "courses": [
+      {
+        "title": "Curso de ciencias sociales",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias sociales",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias sociales",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias sociales",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias sociales",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      }
+    ]
+  },
+  {
+    "type": "Humanidades",
+    "courses": [
+      {
+        "title": "Curso de Humanidades",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de Humanidades",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de Humanidades",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de Humanidades",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de Humanidades",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      }
+    ]
+  },
+  {
+    "type": "Ciencias jurídicas",
+    "courses": [
+      {
+        "title": "Curso de ciencias jurídicas",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias jurídicas",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias jurídicas",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias jurídicas",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciencias jurídicas",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      }
+    ]
+  },
+  {
+    "type": "Matemáticas",
+    "courses": [
+      {
+        "title": "Curso de matemáticas",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de matemáticas",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de matemáticas",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de matemáticas",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de matemáticas",
+        "university": "Universitat Politècnica Catalunya",
+        "country": "España",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      }
+    ]
+  }
+]

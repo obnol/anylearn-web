@@ -1,18 +1,22 @@
 import React from 'react';
-import PostCard from './PostCard';
-import { View } from 'react';
+
+const Item = ({ item }) => {
+  return (
+    <div className='flex flex-col flex-shrink-0'>
+      <img className='h-full' src={item.image} alt='' />
+      <p className='text-base font-light'>{item.title}</p>
+    </div>
+  );
+};
 
 const Category = ({ category }) => {
   return (
-    <div>
-      <div className='flex'>
-        <p className='font-normal text-xl w-3/4'>{category.type}</p>
-        <p className='font-light text-sm text-gray-500'>ver más</p>
-      </div>
-      <div className='flex flex-row h-36 mt-4 justify-between overflow-x-scroll'>
-        {category.cards.map((card, index) => {
-          return <PostCard key={index} card={card} />;
-        })}
+    <div className='flex flex-col mx-5 mt-5'>
+      <p className='text-base font-medium'>{category.type}</p>
+      <div className='flex flex-row h-40 overflow-x-auto space-x-8'>
+        {category.courses.map((item, index) => (
+          <Item key={index} item={item} />
+        ))}
       </div>
     </div>
   );
