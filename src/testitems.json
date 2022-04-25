@@ -1,0 +1,77 @@
+[
+    {
+        "type": "viajes",
+        "cards": [
+            {
+                "title": "nuevo post",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            },
+            {
+                "title": "nuevo post 2",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            },
+            {
+                "title": "nuevo post 3",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            },
+            {
+                "title": "nuevo post 4",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            }
+        ]
+    },
+    {
+        "type": "masterclasses",
+        "cards": [
+            {
+                "title": "nuevo post",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            },
+            {
+                "title": "nuevo post 2",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            },
+            {
+                "title": "nuevo post 3",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            },
+            {
+                "title": "nuevo post 4",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            }
+        ]
+    },
+    {
+        "type": "cursos",
+        "cards": [
+            {
+                "title": "nuevo post",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            },
+            {
+                "title": "nuevo post 2",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            },
+            {
+                "title": "nuevo post 3",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            },
+            {
+                "title": "nuevo post 4",
+                "description": "este es el nuevo post",
+                "image": "https://picsum.photos/200"
+            }
+        ]
+    }
+]
