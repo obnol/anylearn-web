@@ -43,8 +43,8 @@ const LogIn = () => {
   return (
     <>
       <div className='flex flex-col justify-center items-center pt-24 text-2xl font-medium'>
-        <p>Welcome!</p>
-        <p>Sign in to continue!</p>
+        <p>Bienvenido!</p>
+        <p>Inicia sesión para continuar!</p>
       </div>
 
       <div
@@ -53,7 +53,7 @@ const LogIn = () => {
       >
         <div className='flex h-full justify-center items-center'>
           <FaLinkedin className='text-2xl fill-[#0072b1]' />
-          <p className='pl-2 font-medium'>Log in with LinkedIn</p>
+          <p className='pl-2 font-medium'>Conéctate con LinkedIn</p>
         </div>
       </div>
       <p className='flex justify-center items-center py-5 text-slate-500'>or</p>
@@ -77,15 +77,15 @@ const LogIn = () => {
         onClick={handleLogin}
       >
         <div className='flex h-full justify-center items-center'>
-          <p className='pl-2 font-medium text-white'>Log in</p>
+          <p className='pl-2 font-medium text-white'>Entrar</p>
         </div>
       </div>
       <p className='flex justify-center items-center pt-5 text-slate-500 text-xs text-center'>
-        New to AnyLearn?
+        Nuevo en AnyLearn?
       </p>
       <p className='flex justify-center items-center pt-1 text-slate-500 text-xs text-center'>
         <Link to='/signup' className='text-blue-500'>
-          Create an account.
+          Crea una cuenta.
         </Link>
       </p>
     </>

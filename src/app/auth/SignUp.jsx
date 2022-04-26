@@ -38,8 +38,8 @@ const Signup = () => {
       {!form ? (
         <>
           <div className='flex flex-col justify-center items-center pt-24 text-2xl font-medium'>
-            <p>Welcome!</p>
-            <p>Sign up to continue!</p>
+            <p>Bienvenido!</p>
+            <p>Regístrate para continuar!</p>
           </div>
 
           <div
@@ -48,7 +48,7 @@ const Signup = () => {
           >
             <div className='flex h-full justify-center items-center'>
               <FaLinkedin className='text-2xl fill-[#0072b1]' />
-              <p className='pl-2 font-medium'>Sign up with LinkedIn</p>
+              <p className='pl-2 font-medium'>Conéctate con LinkedIn</p>
             </div>
           </div>
           <p className='flex justify-center items-center py-5 text-slate-500'>
@@ -61,7 +61,9 @@ const Signup = () => {
           >
             <div className='flex h-full justify-center items-center'>
               <AiFillMail className='text-2xl' />
-              <p className='pl-2 font-medium'>Sign up with email</p>
+              <p className='pl-2 font-medium'>
+                Regístrate con correo electrónico
+              </p>
             </div>
           </div>
         </>
@@ -74,25 +76,25 @@ const Signup = () => {
             />
           </div>
           <div className='flex items-center pt-5 text-2xl mx-5 font-medium'>
-            <p>Enter your details</p>
+            <p>Introduce tus datos</p>
           </div>
           <div className='flex flex-col mx-5 pt-8'>
             <input
               type='text'
               className='form-input w-full block border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black'
-              placeholder='name'
+              placeholder='nombre'
               onChange={(e) => setName(e.target.value)}
             />
             <input
               type='text'
               className='form-input w-full block border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black'
-              placeholder='last name'
+              placeholder='apellido'
               onChange={(e) => setLastName(e.target.value)}
             />
             <input
               type='email'
               className='form-input w-full block border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black'
-              placeholder='email address'
+              placeholder='correo electrónico'
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
@@ -104,7 +106,7 @@ const Signup = () => {
             <input
               type='password'
               className='form-input w-full block border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black'
-              placeholder='confirm password'
+              placeholder='confirmar contraseña'
             />
           </div>
           <div
@@ -112,14 +114,14 @@ const Signup = () => {
             onClick={handleSignUp}
           >
             <div className='flex h-full justify-center items-center '>
-              <p className='pl-2 font-medium text-white'>Sign up</p>
+              <p className='pl-2 font-medium text-white'>Registrarte</p>
             </div>
           </div>
         </>
       )}
 
       <p className='flex justify-center items-center pt-5 mx-20 text-slate-500 text-xs text-center'>
-        By signing up you are agreed with our friendly terms and condition.
+        Al registrarte, aceptas nuestras condiciones.
       </p>
     </>
   );
