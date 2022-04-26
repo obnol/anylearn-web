@@ -31,9 +31,6 @@ const Home = () => {
     <>
       <Header />
       <SearchBar />
-      <p className='flex mx-5 mt-5 font-medium text-xl w-3/4'>
-        Categorias populares en nuestra plataforma
-      </p>
       <PopularCategories categories={popularCategories} />
 
       {Dummy.map((category, index) => (
