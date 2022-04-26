@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "category": "Ciencias naturales"
+  },
+  {
+    "id": 2,
+    "category": "Ciencias sociales"
+  },
+  {
+    "id": 3,
+    "category": "Humanidades"
+  },
+  {
+    "id": 4,
+    "category": "Ciencias jurídicas"
+  },
+  {
+    "id": 5,
+    "category": "Matemáticas"
+  },
+  {
+    "id": 6,
+    "category": "Ingenierías"
+  },
+  {
+    "id": 7,
+    "category": "Arte"
+  },
+  {
+    "id": 8,
+    "category": "Filosofia"
+  },
+  {
+    "id": 9,
+    "category": "Historia"
+  }
+]
