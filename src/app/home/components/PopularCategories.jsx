@@ -9,15 +9,11 @@ const Item = ({ item }) => {
   );
 };
 
-const Category = ({ category }) => {
+const PopularCategories = ({ categories }) => {
   return (
     <div className='flex flex-col mx-5 mt-5'>
-      <div className='flex flex-row justify-between'>
-        <p className='font-medium text-xl'>{category.type}</p>
-        <p className='text-sm font-light'>ver más</p>
-      </div>
       <div className='flex flex-row h-auto overflow-x-auto space-x-8'>
-        {category.courses.map((item, index) => (
+        {categories.map((item, index) => (
           <Item key={index} item={item} />
         ))}
       </div>
@@ -25,4 +21,4 @@ const Category = ({ category }) => {
   );
 };
 
-export default Category;
+export default PopularCategories;
