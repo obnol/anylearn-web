@@ -6,12 +6,6 @@ import Category from './components/Category';
 import Dummy from '../dummy.json';
 
 const Home = () => {
-  useEffect(() => {
-    fetch('https://vgafib.org:9091/WeatherForecast')
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
-
   return (
     <>
       <Header />
