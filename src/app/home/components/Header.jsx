@@ -1,10 +1,13 @@
 import React from 'react';
 import logo from '../../../assets/header-regular.png';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const navigate = useNavigate();
   const logged = false;
+  const user = useSelector(({ auth }) => auth.user);
+  console.log('USER', user);
 
   return (
     <>

@@ -3,6 +3,7 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Category from './components/Category';
 import PopularCategories from './components/PopularCategories';
+import { useSelector } from 'react-redux';
 
 import Categories from '../categories.json';
 import Dummy from '../dummy.json';
