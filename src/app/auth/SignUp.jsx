@@ -4,6 +4,7 @@ import { AiFillMail } from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
 import { useLinkedIn } from 'react-linkedin-login-oauth2';
 import { useNavigate } from 'react-router-dom';
+import { linkedinService } from '../../services/linkedin';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -25,7 +26,10 @@ const Signup = () => {
     redirectUri: `${window.location.origin}/linkedin`,
     scope: ['r_liteprofile', 'r_emailaddress'],
     onSuccess: (code) => {
-      console.log(code);
+      linkedinService.login(code).then((res) => {
+        console.log(res);
+        localStorage.setItem('token', res);
+      });
       navigate('/');
     },
     onError: (error) => {

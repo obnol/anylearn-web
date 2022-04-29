@@ -4,28 +4,39 @@ import { useLinkedIn } from 'react-linkedin-login-oauth2';
 import { Link, useNavigate } from 'react-router-dom';
 import { authService } from '../../services/auth';
 import { linkedinService } from '../../services/linkedin';
+import { useDispatch } from 'react-redux';
+import { setUserData } from '../../store/auth';
+
+const fakeService = (code) => {
+  return {
+    email: 'longboqiu@gmail.com',
+    name: 'Longbo',
+    lastName: 'Qiu',
+    profilePicture: 'https://picsum.photos/200',
+    token: code,
+  };
+};
 
 const LogIn = () => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const { linkedInLogin } = useLinkedIn({
     clientId: '78skdzmjsq9y4b',
     redirectUri: `${window.location.origin}/linkedin`,
     scope: ['r_liteprofile', 'r_emailaddress'],
     onSuccess: (code) => {
-      console.log('CODE', code);
-      // send request to backend
-
-      // const { access_token } = response.data;
-      // console.log(access_token);
-      // const { data: user } = await linkedinService.getUser(access_token);
-      // const { email, firstName, lastName } = user;
-      // const { data: token } = await authService.login({ email, password });
-      // localStorage.setItem('token', token);
-      // localStorage.setItem('user', JSON.stringify({ email, firstName, lastName }));
+      // linkedinService.login(code).then((res) => {
+      //   console.log(res);
+      //   localStorage.setItem('token', res);
+      //   dispatch(setUserData(res));
+      //   navigate('/');
+      // });
+      const response = fakeService(code);
+      dispatch(setUserData(response));
       navigate('/');
     },
     onError: (error) => {},
