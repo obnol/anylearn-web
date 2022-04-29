@@ -10,4 +10,15 @@ const logIn = async (email, password) => {
   return { status: 200 };
 };
 
-export const authService = { logIn };
+const getUserData = (token) => {
+  const data = {
+    email: 'longboqiu@gmail.com',
+    name: 'Longbo',
+    lastName: 'Qiu',
+    profilePicture: 'https://picsum.photos/200',
+    token,
+  };
+  return data;
+};
+
+export const authService = { logIn, getUserData };

@@ -7,6 +7,16 @@ import { linkedinService } from '../../services/linkedin';
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../../store/auth';
 
+const fakeService = (code) => {
+  return {
+    email: 'longboqiu@gmail.com',
+    name: 'Longbo',
+    lastName: 'Qiu',
+    profilePicture: 'https://picsum.photos/200',
+    token: code,
+  };
+};
+
 const LogIn = () => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
@@ -19,12 +29,15 @@ const LogIn = () => {
     redirectUri: `${window.location.origin}/linkedin`,
     scope: ['r_liteprofile', 'r_emailaddress'],
     onSuccess: (code) => {
-      linkedinService.login(code).then((res) => {
-        console.log(res);
-        localStorage.setItem('token', res);
-        dispatch(setUserData(res));
-        navigate('/');
-      });
+      // linkedinService.login(code).then((res) => {
+      //   console.log(res);
+      //   localStorage.setItem('token', res);
+      //   dispatch(setUserData(res));
+      //   navigate('/');
+      // });
+      const response = fakeService(code);
+      dispatch(setUserData(response));
+      navigate('/');
     },
     onError: (error) => {},
   });
