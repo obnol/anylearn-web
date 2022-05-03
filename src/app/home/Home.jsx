@@ -35,8 +35,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const user = useSelector(({ auth }) => auth.user);
 
-  const [showSidebar, setShowSidebar] = useState(false);
-
   useEffect(() => {
     const token = localStorage.getItem('anylearn-token');
     if (token && !user) {
@@ -48,7 +46,6 @@ const Home = () => {
   return (
     <>
       <Header />
-      {/* <SearchBar /> */}
       <Introduction />
       <PopularCategories categories={popularCategories} />
 

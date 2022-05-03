@@ -7,7 +7,7 @@ const Sidebar = () => {
     <>
       {showSidebar ? (
         <button
-          className='flex text-4xl text-white items-center left-10 top-6 z-50'
+          className='flex text-3xl h-8 text-white z-50'
           onClick={() => setShowSidebar(!showSidebar)}
         >
           x
@@ -15,11 +15,11 @@ const Sidebar = () => {
       ) : (
         <svg
           onClick={() => setShowSidebar(!showSidebar)}
-          className='z-30 flex items-center left-10 top-6'
-          fill='#2563EB'
+          className='z-30 flex'
+          fill='#3D5A80'
           viewBox='0 0 100 80'
-          width='40'
-          height='40'
+          width='30'
+          height='32'
         >
           <rect width='100' height='10'></rect>
           <rect y='30' width='100' height='10'></rect>
@@ -28,7 +28,7 @@ const Sidebar = () => {
       )}
 
       <div
-        className={`top-0 left-0 w-screen bg-blue-600 p-10 pl-20 text-white fixed h-full z-40 ease-in-out duration-300 ${
+        className={`top-0 left-0 w-screen bg-[#3D5A80] p-10 text-white fixed h-full z-40 ease-in-out duration-200 ${
           showSidebar ? 'translate-x-0 ' : '-translate-x-full'
         }`}
       >
