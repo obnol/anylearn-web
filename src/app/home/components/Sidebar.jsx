@@ -32,9 +32,9 @@ const Sidebar = () => {
           showSidebar ? 'translate-x-0 ' : '-translate-x-full'
         }`}
       >
-        <h3 className='mt-20 text-4xl font-semibold text-white'>
+        <p className='mt-20 text-4xl font-semibold text-white'>
           I am a sidebar
-        </h3>
+        </p>
       </div>
     </>
   );
