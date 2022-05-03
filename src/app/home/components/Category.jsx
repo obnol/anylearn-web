@@ -5,7 +5,6 @@ const Item = ({ item }) => {
   const navigate = useNavigate();
 
   return (
-
     <div
       className='flex flex-col shrink-0 w-44'
       onClick={() => navigate('/course/1')}
@@ -19,7 +18,7 @@ const Item = ({ item }) => {
 const Category = ({ category }) => {
   return (
     <div className='flex flex-col mx-5 mt-5 h-auto'>
-      <div className='flex flex-row justify-between'>
+      <div className='flex flex-row justify-between mb-1'>
         <p className='font-medium text-xl'>{category.type}</p>
         <p className='text-sm font-light'>ver más</p>
       </div>
