@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Item = ({ item }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className='flex flex-col shrink-0 w-44'>
-      <img className='h-4/6' src={item.image} alt='image' />
+
+    <div
+      className='flex flex-col shrink-0 w-44'
+      onClick={() => navigate('/course/1')}
+    >
+      <img className='h-4/6 rounded-md' src={item.image} alt='image' />
       <p className='h-2/6 text-base font-light'>{item.title}</p>
     </div>
   );
