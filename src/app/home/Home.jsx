@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { authService } from '../../services/auth';
 import Introduction from './components/Introduction';
 import { useNavigate } from 'react-router-dom';
+import Animated from '../commons/Animated';
 
 import Categories from '../categories.json';
 import Dummy from '../dummy.json';
@@ -91,21 +92,23 @@ const Home = () => {
   return (
     <>
       <Header />
-      <Introduction />
-      {!user && (
-        <div className='flex flex-col mx-14'>
-          <LogInButtonUser />
-          <LogInButtonClient />
-        </div>
-      )}
+      <Animated>
+        <Introduction />
+        {!user && (
+          <div className='flex flex-col mx-14'>
+            <LogInButtonUser />
+            <LogInButtonClient />
+          </div>
+        )}
 
-      <PopularCategories categories={popularCategories} />
+        <PopularCategories categories={popularCategories} />
 
-      {Dummy.map((category, index) => (
-        <>
-          <Category key={index} category={category} />
-        </>
-      ))}
+        {Dummy.map((category, index) => (
+          <>
+            <Category key={index} category={category} />
+          </>
+        ))}
+      </Animated>
     </>
   );
 };
