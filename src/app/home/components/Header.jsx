@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from '../../../assets/header-regular.png';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLogout } from '../../../store/auth';
+import Sidebar from './Sidebar';
 
 const LogInButton = () => {
   const navigate = useNavigate();
@@ -37,13 +37,11 @@ const Header = () => {
 
   return (
     <>
-      <div className='flex flex-row justify-between mt-5 mx-5 items-center'>
-        <div className='h-11'>
-          <img className='h-full' src={logo} alt='' />
-        </div>
+      <div className='flex flex-row justify-between items-center m-5'>
+        <Sidebar />
+        <img className='h-11' src='/anylearn-logo2.png' alt='' />
         {user ? <LogOutButton /> : <LogInButton />}
       </div>
-
       {user && (
         <div className='px-5 pt-5'>
           <div className='flex flex-row h-16 justify-between'>
