@@ -7,6 +7,7 @@ import { getUserData } from '../../store/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { authService } from '../../services/auth';
 import Sidebar from './components/Sidebar';
+import Introduction from './components/Introduction';
 
 import Categories from '../categories.json';
 import Dummy from '../dummy.json';
@@ -34,8 +35,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const user = useSelector(({ auth }) => auth.user);
 
-  const [showSidebar, setShowSidebar] = useState(false);
-
   useEffect(() => {
     const token = localStorage.getItem('anylearn-token');
     if (token && !user) {
@@ -47,7 +46,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      {/* <SearchBar /> */}
+      <Introduction />
       <PopularCategories categories={popularCategories} />
 
       {Dummy.map((category, index) => (
