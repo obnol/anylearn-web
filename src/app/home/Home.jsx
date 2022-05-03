@@ -7,6 +7,7 @@ import { getUserData } from '../../store/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { authService } from '../../services/auth';
 import Sidebar from './components/Sidebar';
+import Introduction from './components/Introduction';
 
 import Categories from '../categories.json';
 import Dummy from '../dummy.json';
@@ -48,6 +49,7 @@ const Home = () => {
     <>
       <Header />
       {/* <SearchBar /> */}
+      <Introduction />
       <PopularCategories categories={popularCategories} />
 
       {Dummy.map((category, index) => (
