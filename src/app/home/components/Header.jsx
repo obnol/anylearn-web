@@ -5,34 +5,6 @@ import { setLogout } from '../../../store/auth';
 import Sidebar from './Sidebar';
 import { FiSearch } from 'react-icons/fi';
 
-const LogInButton = () => {
-  const navigate = useNavigate();
-  return (
-    <div
-      className='flex h-7 bg-blue-500  rounded-lg'
-      onClick={() => navigate('/login')}
-    >
-      <div className='flex h-full w-full justify-center items-center'>
-        <p className='font-medium text-sm text-white'>Log In</p>
-      </div>
-    </div>
-  );
-};
-
-const LogOutButton = () => {
-  const dispatch = useDispatch();
-  return (
-    <div
-      className='flex h-7 bg-white rounded-lg border-blue-500 border-2'
-      onClick={() => dispatch(setLogout())}
-    >
-      <div className='flex h-full w-full justify-center items-center'>
-        <p className='font-medium text-sm text-blue-500'>Log Out</p>
-      </div>
-    </div>
-  );
-};
-
 const SearchButton = () => {
   const navigate = useNavigate();
   return (
