@@ -1,32 +1,19 @@
 import React from 'react';
-import logo from '../../../assets/header-regular.png';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLogout } from '../../../store/auth';
+import Sidebar from './Sidebar';
+import { FiSearch } from 'react-icons/fi';
 
-const LogInButton = () => {
+const SearchButton = () => {
   const navigate = useNavigate();
   return (
     <div
-      className='flex h-8 w-24 bg-blue-500  rounded-lg'
-      onClick={() => navigate('/login')}
+      className='flex rounded-lg h-6 w-8'
+      onClick={() => navigate('/search')}
     >
-      <div className='flex h-full w-full justify-center items-center'>
-        <p className='font-medium text-sm text-white'>Log In</p>
-      </div>
-    </div>
-  );
-};
-
-const LogOutButton = () => {
-  const dispatch = useDispatch();
-  return (
-    <div
-      className='flex h-8 w-24 bg-white rounded-lg border-blue-500 border-2'
-      onClick={() => dispatch(setLogout())}
-    >
-      <div className='flex h-full w-full justify-center items-center'>
-        <p className='font-medium text-sm text-blue-500'>Log Out</p>
+      <div className='flex w-full h-full justify-center items-center'>
+        <FiSearch className='text-[#3D5A80] text-xl' />
       </div>
     </div>
   );
@@ -37,13 +24,11 @@ const Header = () => {
 
   return (
     <>
-      <div className='flex flex-row justify-between mt-5 mx-5 items-center'>
-        <div className='h-11'>
-          <img className='h-full' src={logo} alt='' />
-        </div>
-        {user ? <LogOutButton /> : <LogInButton />}
+      <div className='flex flex-row justify-between items-center m-5'>
+        <Sidebar />
+        <img className='h-7' src='/anylearn-logo2.png' alt='' />
+        <SearchButton />
       </div>
-
       {user && (
         <div className='px-5 pt-5'>
           <div className='flex flex-row h-16 justify-between'>
