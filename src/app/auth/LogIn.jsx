@@ -6,6 +6,7 @@ import { authService } from '../../services/auth';
 import { linkedinService } from '../../services/linkedin';
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../../store/auth';
+import { IoIosArrowBack } from 'react-icons/io';
 
 const fakeService = (code) => {
   return {
@@ -53,7 +54,11 @@ const LogIn = () => {
 
   return (
     <>
-      <div className='flex flex-col justify-center items-center pt-24 text-2xl font-medium'>
+      <div className='items-center pt-10 mx-3'>
+        <IoIosArrowBack className='text-2xl' onClick={() => navigate('/')} />
+      </div>
+
+      <div className='flex flex-col justify-center items-center pt-10 text-2xl font-medium'>
         <p>Bienvenido!</p>
         <p>Inicia sesión para continuar!</p>
       </div>

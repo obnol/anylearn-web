@@ -41,7 +41,13 @@ const Signup = () => {
     <>
       {!form ? (
         <>
-          <div className='flex flex-col justify-center items-center pt-24 text-2xl font-medium'>
+          <div className='items-center pt-10 mx-3'>
+            <IoIosArrowBack
+              className='text-2xl'
+              onClick={() => navigate('/login')}
+            />
+          </div>
+          <div className='flex flex-col justify-center items-center pt-10 text-2xl font-medium'>
             <p>Bienvenido!</p>
             <p>Regístrate para continuar!</p>
           </div>
