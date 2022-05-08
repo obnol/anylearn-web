@@ -3,10 +3,10 @@ import { TextLoop } from 'react-text-loop-next';
 
 const Introduction = () => {
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className='flex flex-col justify-center items-center mt-3'>
       <div className='flex text-3xl'>
         <p className='text-[#293241] font-bold'>Any</p>
-        <TextLoop interval={1500} className='font-semibold text-[#EE6C4D]'>
+        <TextLoop interval={2000} className='font-semibold text-[#EE6C4D]'>
           <p>Learn</p>
           <p>where</p>
           <p>one</p>
