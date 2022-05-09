@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import Dummy from '../../dummy.json'
 import { FiFilter } from 'react-icons/fi';
-
+import Animated from "../../commons/Animated";
+import { Route } from "react-router-dom";
 var Categories = ["Blockchain","Liderazgo","Arqueología","Historia de las civilizaciones"];
 var SearchResult = [];
 //const Duration = ["1 mes","6 meses","1 año"]
@@ -16,21 +17,40 @@ const submitValues =
 };
 
 const onValueChange = (event) => {
-    if (event.target.id === "distance") {
+    if (event.target.name === "distance") {
         submitValues.distance = event.target.value;
         console.log(submitValues.distance);
     }
-    else if (event.target.id === "duration") {
+    else if (event.target.name === "duration") {
         submitValues.duration = event.target.value;
     }
-    else if (event.target.id === "category") {
+    else if (event.target.name === "category") {
+        console.log(event.target.id);
         submitValues.category[event.target.id] = !submitValues.category[event.target.id]; 
     }
     console.log("Distance: "+submitValues.distance+" Duration: "+submitValues.duration+" Last changed category: "+submitValues.category[event.target.id]);
 };
 
-const onSubmit = (event) => {
-    
+const handleSumbit = (event) => {
+    //Añadir los filtros a la query del enlace
+    //?distance=%2Cduration=%2Ccategories
+    let query = "?distance="+submitValues.distance+"%2Cduration="+submitValues.duration;
+        if (submitValues.category.find((cat) => {
+            return cat == true;
+        }))
+        {
+            let cat = "%2Ccategories=";
+            for (const key in Categories) {
+                if (submitValues.category[key]) 
+                {
+                    cat += Categories[key] + "&";
+                }
+            }
+            query += (cat.slice(0,cat.length-1));
+        }
+    console.log("Resulting query: "+query);
+    let URL = window.location.href.split("?");
+    window.location.href = URL[0]+query;
 };
 
 const Filters = () => {
@@ -38,7 +58,7 @@ const Filters = () => {
     return (
         <>
             <div
-                className='btn h-8 w-24 m-5 border-primary border-2 px-2 py-1 text-xl cursor-pointer rounded-xl border-[#3D5A80] bg-white-100'
+                className='btn h-8 w-24 m-5 border-primary border-2 px-2 py-1 text-xl cursor-pointer rounded-xl border-[#293241] bg-white-100'
                 onClick={() => setDisplay(!display)}
             >
                 <div className='flex justify-center items-end'>
@@ -50,24 +70,24 @@ const Filters = () => {
                     display ? (
                             <div>
                                 <div className='flex h-full w-full justify-center items-center  mb-2 mt-5'>
-                                    <p className='font-medium text-sm text-black'>Distancia</p>
+                                    <p className='font-medium text-m text-black'>Distancia</p>
                                 </div>
-                                <div className="flex justify-center"  onSubmit={onSubmit}>
+                                <div className="flex justify-center" onChange={onValueChange}>
                                     <div>
-                                        <div className="form-check" onChange={onValueChange}>
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" value="<10" id="distance" />
+                                        <div className="form-check">
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value="10" id="distance0" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 Menos de 10 kilómetros
                                             </label>
                                         </div>
-                                        <div className="form-check" onChange={onValueChange}>
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" value="<100" id="distance" />
+                                        <div className="form-check">
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value="100" id="distance1" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 Menos de 100 kilómetros
                                             </label>
                                         </div>
-                                        <div className="form-check" onChange={onValueChange}>
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" value=">100" id="distance" />
+                                        <div className="form-check">
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value="101" id="distance2" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 Más de 100 kilómetros
                                             </label>
@@ -75,39 +95,40 @@ const Filters = () => {
                                     </div>
                                 </div>                           
                                 <div className='flex h-full w-full justify-center items-center  mb-2 mt-5'>
-                                    <p className='font-medium text-sm text-black'>Duración</p>
+                                    <p className='font-medium text-m text-black'>Duración</p>
                                 </div>
-                                <div className="flex justify-center"  onSubmit={onSubmit}>
+                                <div className="flex justify-center" onChange={onValueChange}>
                                     <div>
-                                        <div className="form-check" onChange={onValueChange}>
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" value="1 mes" id="duration" />
+                                        <div className="form-check">
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio"  value="1mes" id="duration0" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 1 mes
                                             </label>
                                         </div>
-                                        <div className="form-check" onChange={onValueChange}>
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" value="1 semestre" id="duration" />
+                                        <div className="form-check">
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value="1semestre" id="duration1" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 6 meses
                                             </label>
                                         </div>
-                                        <div className="form-check" onChange={onValueChange}>
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" value="1 año" id="duration" />
+                                        <div className="form-check">
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value="1año" id="duration2" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 1 año o más
                                             </label>
+                                            
                                         </div>
                                     </div>
                                 </div>
                                 <div className='flex h-full w-full justify-center items-center mb-2 mt-5'>
-                                    <p className='font-medium text-sm text-black'>Categoría</p>
+                                    <p className='font-medium text-m text-black'>Categoría</p>
                                 </div>
-                                <div className="flex justify-center" >
+                                <div className="flex justify-center"  onChange={onValueChange}>
                                     <div>
                                         {
                                             Categories.map((item, key) => (
-                                                <div className="form-check justify-center" onChange={onValueChange} key={key}>
-                                                    <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name={item} value={item} id="category" />
+                                                <div className="form-check justify-center" key={key}>
+                                                    <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name="category" value={item} id={key} />
                                                     <label className="form-check-label inline-block font-medium text-sm text-black">
                                                         {item}
                                                     </label>
@@ -117,7 +138,7 @@ const Filters = () => {
                                     </div>
                                 </div>
                                 <div className="flex justify-center">
-                                <button className="flex my-10 rounded-lg bg-[#EE6C4D] border-2 items-center p-3" onClick={onSubmit} type="submit">
+                                <button className="flex my-10 rounded-lg bg-[#EE6C4D] border-2 items-center p-3" onClick={handleSumbit} type="submit">
                                     <p className='font-medium text-sm text-[#E0FBFC]'>Aplicar Cambios</p>
                                 </button>
                                 </div>
