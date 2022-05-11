@@ -106,13 +106,19 @@ const Filters = () => {
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value="1semestre" id="duration1" />
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value="3meses" id="duration1" />
+                                            <label className="form-check-label inline-block font-medium text-sm text-black">
+                                                3 meses
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value="1semestre" id="duration2" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 6 meses
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value="1año" id="duration2" />
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value="1año" id="duration3" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 1 año o más
                                             </label>
