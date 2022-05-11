@@ -9,10 +9,13 @@ var props = {
     categories: []
 };
 
+var hasOptions = false;
+
 const onStart = () => {
     let params = window.location.href.split("?");
     if (params.length > 1)
     {
+        hasOptions = true;
         let variables = params[1].split("%2C");
         props.distance = (variables[0].split("="))[1];
         if (variables.length > 1) 
@@ -38,7 +41,13 @@ const Search = () =>
         <>
         <Animated>
             <SearchBar/>
-            <Filters />
+            {
+                hasOptions ? (
+                    <Filters values={props}/>
+                ) : (
+                    <Filters />
+                )
+            }
             <SearchResults />
         </Animated>
         {/*<Category />*/}

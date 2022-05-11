@@ -53,8 +53,8 @@ const handleSumbit = (event) => {
     window.location.href = URL[0]+query;
 };
 
-const Filters = () => {
-    const [display, setDisplay] = useState(true);
+const Filters = (props) => {
+    const [display, setDisplay] = useState(props.distance === undefined);
     return (
         <>
             <div
@@ -153,9 +153,6 @@ const Filters = () => {
                         <></>
                     )
                 }
-            </div>
-            <div>
-                
             </div>
         </>
 
