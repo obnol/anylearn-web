@@ -41,6 +41,7 @@ const Home = () => {
       const response = authService.getUserData(token);
       dispatch(getUserData(response));
     }
+    // eslint-disable-next-line
   }, []);
 
   const LogInButtonUser = () => {
@@ -70,20 +71,6 @@ const Home = () => {
           <p className='font-medium text-sm text-[#3D5A80]'>
             Inicia sesión como centro formativo
           </p>
-        </div>
-      </div>
-    );
-  };
-
-  const LogOutButton = () => {
-    const dispatch = useDispatch();
-    return (
-      <div
-        className='flex h-7 bg-white rounded-lg border-blue-500 border-2'
-        onClick={() => dispatch(setLogout())}
-      >
-        <div className='flex h-full w-full justify-center items-center'>
-          <p className='font-medium text-sm text-blue-500'>Log Out</p>
         </div>
       </div>
     );

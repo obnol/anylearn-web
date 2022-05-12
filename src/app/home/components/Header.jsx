@@ -19,11 +19,11 @@ const SearchButton = () => {
 
 const Header = () => {
   return (
-    <header className='sticky top-0 z-50 bg-white'>
+    <header className='flex flex-col sticky top-0 z-50 bg-white'>
       <div className='flex flex-row justify-between items-center m-4'>
         <Sidebar />
         <div className='h-7'>
-          <img className='h-full' src='/logo-svg-color.png' alt='' />
+          <img className='h-full' src='/logo-svg-color-small.png' alt='logo' />
         </div>
         <SearchButton />
       </div>
