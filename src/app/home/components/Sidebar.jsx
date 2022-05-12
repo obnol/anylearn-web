@@ -104,7 +104,7 @@ const Sidebar = () => {
             </p>
             <img
               className='h-full rounded-full'
-              src={user.profilePicture}
+              src={user.avatar}
               alt='profile'
               onClick={() => navigate('/account')}
             />

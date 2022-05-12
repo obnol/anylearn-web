@@ -15,7 +15,7 @@ const getUserData = (token) => {
     email: 'longboqiu@gmail.com',
     name: 'Longbo',
     lastName: 'Qiu',
-    profilePicture: 'https://picsum.photos/200',
+    avatar: 'https://picsum.photos/200',
     token,
   };
   return data;
