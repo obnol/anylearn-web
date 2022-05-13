@@ -55,14 +55,16 @@ const Sidebar = () => {
   const LogOutButton = () => {
     return (
       <div
-        className='flex w-full h-10 justify-center items-center rounded-lg border-[#EE6C4D] border-2'
+        className='flex w-full h-10 justify-center items-center rounded-lg'
         onClick={() => {
           dispatch(setLogout());
           setShowSidebar(false);
         }}
       >
         <div className='flex h-full w-full justify-center items-center'>
-          <p className='font-medium text-sm text-white'>Cerrar Sesión</p>
+          <p className='font-bold text-md text-anylearn-accent'>
+            Cerrar Sesión
+          </p>
         </div>
       </div>
     );
@@ -93,8 +95,8 @@ const Sidebar = () => {
       )}
 
       <div
-        className={`top-0 left-0 w-screen bg-[#3D5A80] p-10 text-white fixed h-full z-40 ease-in-out duration-200 ${
-          showSidebar ? 'translate-x-0 ' : '-translate-x-full'
+        className={`top-0 left-0 w-screen bg-[#3D5A80] p-10 text-white fixed  h-screen overscroll-none z-40 ease-in-out duration-300 ${
+          showSidebar ? 'translate-x-0 ' : '-translate-x-full '
         }`}
       >
         {user && (
