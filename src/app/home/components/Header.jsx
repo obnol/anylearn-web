@@ -19,7 +19,7 @@ const SearchButton = () => {
 
 const Header = () => {
   return (
-    <header className='flex flex-col sticky top-0 z-50 bg-white'>
+    <header className='flex flex-col sticky top-0 z-50 bg-white border-2 border-b-anylearn-blue-dark'>
       <div className='flex flex-row justify-between items-center m-4'>
         <Sidebar />
         <div className='h-7'>
@@ -27,7 +27,6 @@ const Header = () => {
         </div>
         <SearchButton />
       </div>
-      <div className='h-px bg-[#3D5A80]'></div>
     </header>
   );
 };

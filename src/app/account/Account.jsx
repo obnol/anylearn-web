@@ -64,12 +64,12 @@ const Account = () => {
       <div className='h-5/6'>
         <Avatar avatar={user?.avatar} />
         <div className='-translate-y-10 flex items-center justify-center'>
-          <p className='text-2xl font-bold'>{user?.name}</p>
+          <p className='text-2xl font-bold tracking-wide'>{user?.name}</p>
         </div>
         <div className='mx-5'>
           <div className='flex flex-row items-center'>
-            <BsBookmark className='mr-1 text-xl' />
-            <p className='text-xl font-bold'>Cursos favoritos</p>
+            <BsBookmark className='mr-1 text-xl fill-anylearn-accent' />
+            <p className='text-xl font-bold tracking-wide'>Cursos favoritos</p>
           </div>
           {courses.map((course) => (
             <Curso key={course.title} course={course} />
