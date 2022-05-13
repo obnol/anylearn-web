@@ -4,7 +4,7 @@ import { BsBookmark } from 'react-icons/bs';
 
 const Header = () => {
   return (
-    <div className='flex flow-row justify-between items-center m-5 sticky top-0 z-50'>
+    <div className='flex flow-row justify-between items-center p-5 sticky top-0 z-50 bg-white'>
       <div>
         <IoIosArrowBack className='text-2xl' />
       </div>
