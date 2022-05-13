@@ -69,7 +69,9 @@ const Account = () => {
         <div className='mx-5'>
           <div className='flex flex-row items-center'>
             <BsBookmark className='mr-1 text-xl fill-anylearn-accent' />
-            <p className='text-xl font-bold tracking-wide'>Cursos favoritos</p>
+            <p className='text-xl font-semibold tracking-wide uppercase'>
+              Cursos favoritos
+            </p>
           </div>
           {courses.map((course) => (
             <Curso key={course.title} course={course} />
