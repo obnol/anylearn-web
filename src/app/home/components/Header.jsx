@@ -1,7 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { setLogout } from '../../../store/auth';
 import Sidebar from './Sidebar';
 import { FiSearch } from 'react-icons/fi';
 
@@ -20,35 +18,17 @@ const SearchButton = () => {
 };
 
 const Header = () => {
-  const user = useSelector(({ auth }) => auth.user);
-
   return (
-    <>
-      <div className='flex flex-row justify-between items-center m-5'>
+    <header className='flex flex-col sticky top-0 z-50 bg-white'>
+      <div className='flex flex-row justify-between items-center m-4'>
         <Sidebar />
-        <img className='h-7' src='/anylearn-logo2.png' alt='' />
+        <div className='h-7'>
+          <img className='h-full' src='/logo-svg-color-small.png' alt='logo' />
+        </div>
         <SearchButton />
       </div>
-      {user && (
-        <div className='px-5 pt-5'>
-          <div className='flex flex-row h-16 justify-between'>
-            <div className='flex flex-col w-3/4'>
-              <p className='font-medium text-2xl'>{`¡Hola, ${user.name}!`}</p>
-              <p className='font-light text-slate-500'>
-                ¿Qué te gustaría aprender?
-              </p>
-            </div>
-            <div className='flex w-1/4'>
-              <img
-                className='h-full w-auto rounded-full'
-                src={user.profilePicture}
-                alt=''
-              />
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+      <div className='h-px bg-[#3D5A80]'></div>
+    </header>
   );
 };
 
