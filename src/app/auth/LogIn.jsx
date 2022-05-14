@@ -89,19 +89,19 @@ const LogIn = () => {
         />
       </div>
       <div
-        className='h-14 bg-blue-500 mt-16 mx-16 rounded-lg'
+        className='h-14 bg-anylearn-blue-dark mt-16 mx-16 rounded-lg'
         onClick={handleLogin}
       >
         <div className='flex h-full justify-center items-center'>
-          <p className='pl-2 font-medium text-white'>Entrar</p>
+          <p className='font-medium text-white'>Entrar</p>
         </div>
       </div>
       <p className='flex justify-center items-center pt-5 text-slate-500 text-xs text-center'>
         Nuevo en AnyLearn?
       </p>
       <p className='flex justify-center items-center pt-1 text-slate-500 text-xs text-center'>
-        <Link to='/signup' className='text-blue-500'>
-          Crea una cuenta.
+        <Link to='/signup' className='text-anylearn-blue'>
+          Crea una cuenta
         </Link>
       </p>
     </>

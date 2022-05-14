@@ -126,7 +126,7 @@ const Sidebar = () => {
               {area?.examples && (
                 <div className='ml-5'>
                   {area.examples.map((example) => (
-                    <p className='font-light text-md'>{example}</p>
+                    <p className='font-light text-sm'>{example}</p>
                   ))}
                 </div>
               )}
