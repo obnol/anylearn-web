@@ -6,7 +6,7 @@ const Course = () => {
   return (
     <>
       <Header />
-      <div className='w-max h-52'>
+      <div className='w-full h-52 place-items-end'>
         <img src='https://picsum.photos/390/208' alt='pic' className='h-full' />
       </div>
       <CourseInfo />

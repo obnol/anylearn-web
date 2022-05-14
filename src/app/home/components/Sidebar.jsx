@@ -1,10 +1,74 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { IoIosArrowForward } from 'react-icons/io';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { setLogout } from '../../../store/auth';
+
+const areas = [
+  {
+    name: 'Idiomas',
+    value: 'idiomas',
+  },
+  {
+    name: 'Habilidades Personales',
+    value: 'habilidades-personales',
+    examples: [
+      'Psicología',
+      'Comunicación',
+      'Liderazgo',
+      'Inteligencia Emocional',
+    ],
+  },
+  {
+    name: 'Tecnología',
+    value: 'tecnologia',
+    examples: [
+      'Inteligencia Artificial',
+      'Ciberseguridad',
+      'Blockchain',
+      'Programación',
+    ],
+  },
+  {
+    name: 'Administración de Empresas',
+    value: 'administracion-empresas',
+    examples: ['Marketing', 'Finanzas', 'Gestión de Proyectos'],
+  },
+  {
+    name: 'Sostenibilidad y Medio Ambiente',
+    value: 'sostenibilidad',
+  },
+  {
+    name: 'Historia y Antropología',
+    value: 'historia-antropologia',
+  },
+];
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const user = useSelector(({ auth }) => auth.user);
 
   const [showSidebar, setShowSidebar] = useState(false);
+
+  const LogOutButton = () => {
+    return (
+      <div
+        className='flex w-full h-10 justify-center items-center rounded-lg'
+        onClick={() => {
+          dispatch(setLogout());
+          setShowSidebar(false);
+        }}
+      >
+        <div className='flex h-full w-full justify-center items-center'>
+          <p className='font-bold text-md text-anylearn-accent'>
+            Cerrar Sesión
+          </p>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <>
@@ -31,20 +95,45 @@ const Sidebar = () => {
       )}
 
       <div
-        className={`top-0 left-0 w-screen bg-[#3D5A80] p-10 text-white fixed h-full z-40 ease-in-out duration-200 ${
-          showSidebar ? 'translate-x-0 ' : '-translate-x-full'
+        className={`top-0 left-0 w-screen bg-[#3D5A80] p-10 text-white fixed  h-screen overscroll-none z-40 ease-in-out duration-300 ${
+          showSidebar ? 'translate-x-0 ' : '-translate-x-full '
         }`}
       >
         {user && (
-          <div className='flex flex-row justify-between items-center mt-10 h-20'>
-            <p className='text-2xl font-bold'>¡Hola, {user.name}!</p>
+          <div className='flex flex-row justify-between items-center mt-7 h-20'>
+            <p className='text-2xl font-bold'>
+              ¡Hola, <span className='text-[#EE6C4D]'>{user.name}</span>!
+            </p>
             <img
               className='h-full rounded-full'
-              src={user.profilePicture}
-              alt=''
+              src={user.avatar}
+              alt='profile'
+              onClick={() => navigate('/account')}
             />
           </div>
         )}
+        <div className='flex flex-col mt-6'>
+          <p className='text-xl font-bold mb-3 underline'>Áreas</p>
+          {areas.map((area) => (
+            <div className='flex flex-col my-1'>
+              <section
+                className='flex flex-row justify-between items-center'
+                onClick={() => navigate(`/search?${area.value}`)}
+              >
+                <p className='font-semibold'>{area.name}</p>
+                <IoIosArrowForward className='text-xl fill-[#EE6C4D]' />
+              </section>
+              {area?.examples && (
+                <div className='ml-5'>
+                  {area.examples.map((example) => (
+                    <p className='font-light text-md'>{example}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className='flex mx-16 mt-8'>{user && <LogOutButton />}</div>
       </div>
     </>
   );

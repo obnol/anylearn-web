@@ -6,6 +6,7 @@ import Search from './app/search/search';
 import Signup from './app/auth/SignUp';
 import Home from './app/home/Home';
 import Course from './app/course/Course';
+import Account from './app/account/Account';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Route path='/search' element={<Search />}/>
       <Route path='/signup' element={<Signup />} />
       <Route exact path='/linkedin' element={<LinkedInCallback />} />
-      <Route path='/course/:courseId' element={<Course />} />
+      <Route exact path='/account' element={<Account />} />
+      <Route exact path='/course/:courseId' element={<Course />} />
     </Routes>
   );
 }
