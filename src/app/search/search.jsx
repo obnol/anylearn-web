@@ -26,7 +26,7 @@ const onStart = () => {
                 let cats = variables[2].split("&");
                 for (const cat in cats) 
                 {
-                    props.categories.add(cat);
+                    props.categories.push(cat);
                 }
             }
         }

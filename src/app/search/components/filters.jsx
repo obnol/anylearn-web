@@ -4,16 +4,17 @@ import Dummy from '../../dummy.json'
 import { FiFilter } from 'react-icons/fi';
 import Animated from "../../commons/Animated";
 import { Route } from "react-router-dom";
-var Categories = ["Blockchain","Liderazgo","Arqueología","Historia de las civilizaciones"];
-var SearchResult = [];
-//const Duration = ["1 mes","6 meses","1 año"]
+var Categories = ["Idiomas","Habilidades Personales","Tecnología","Historia y Antropología",
+                    "Sostenibilidad","Comunicación","Arte y Diseño","Ciencias Médicas","Finanzas"];
+
+                    //const Duration = ["1 mes","6 meses","1 año"]
 //const Distance = ["Menos de 10 Kilómetros","Menos de 100 kilómetros","Más de 100 Kilómetros, dentro de España","Más de 100 Kilómetros, fuera de España"]
 
 const submitValues =
 {
     distance: 0,
     duration: 0,
-    category: [false,false,false,false]
+    category: [false,false,false,false,false,false,false,false,false]
 };
 
 const onValueChange = (event) => {
@@ -34,9 +35,10 @@ const onValueChange = (event) => {
 const handleSumbit = (event) => {
     //Añadir los filtros a la query del enlace
     //?distance=%2Cduration=%2Ccategories
+    var hex = "";
     let query = "?distance="+submitValues.distance+"%2Cduration="+submitValues.duration;
         if (submitValues.category.find((cat) => {
-            return cat == true;
+            return cat == true; //si hay algún valor marcado, lo encuentra
         }))
         {
             let cat = "%2Ccategories=";
@@ -44,9 +46,17 @@ const handleSumbit = (event) => {
                 if (submitValues.category[key]) 
                 {
                     cat += Categories[key] + "&";
+                    hex += "1";
                 }
+                else hex += "0";
             }
+            console.log(hex);
             query += (cat.slice(0,cat.length-1));
+            hex = parseInt(hex,2).toString(16);
+            console.log(hex);
+        }
+        else{
+            hex = 0;
         }
     console.log("Resulting query: "+query);
     let URL = window.location.href.split("?");
@@ -54,7 +64,7 @@ const handleSumbit = (event) => {
 };
 
 const Filters = (props) => {
-    const [display, setDisplay] = useState(props.distance === undefined);
+    const [display, setDisplay] = useState(props.values.distance === undefined);
     return (
         <>
             <div
@@ -75,21 +85,21 @@ const Filters = (props) => {
                                 <div className="flex justify-center" onChange={onValueChange}>
                                     <div>
                                         <div className="form-check">
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value="10" id="distance0" />
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value={20} id="distance0" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
-                                                Menos de 10 kilómetros
+                                                Menos de 20 kilómetros
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value="100" id="distance1" />
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value={200} id="distance1" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
-                                                Menos de 100 kilómetros
+                                                Menos de 200 kilómetros
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value="101" id="distance2" />
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value={Number.MAX_VALUE} id="distance2" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
-                                                Más de 100 kilómetros
+                                                Más de 200 kilómetros
                                             </label>
                                         </div>
                                     </div>
@@ -100,27 +110,34 @@ const Filters = (props) => {
                                 <div className="flex justify-center" onChange={onValueChange}>
                                     <div>
                                         <div className="form-check">
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio"  value="1mes" id="duration0" />
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio"  value={1} id="duration0" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 1 mes
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value="3meses" id="duration1" />
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value={3} id="duration1" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 3 meses
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value="1semestre" id="duration2" />
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value={6} id="duration2" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 6 meses
                                             </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value="1año" id="duration3" />
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value={12} id="duration3" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
-                                                1 año o más
+                                                1 año
+                                            </label>
+                                            
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value={Number.MAX_VALUE} id="duration4" />
+                                            <label className="form-check-label inline-block font-medium text-sm text-black">
+                                                Más de 1 año
                                             </label>
                                             
                                         </div>
