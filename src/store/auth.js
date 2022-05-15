@@ -1,12 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { authService } from '../services/auth';
 
+export const logout = () => (dispatch) => {
+  console.log('in action');
+  window.localStorage.removeItem('anylearn-token');
+  dispatch(setLogout());
+};
+
 const initialState = {
   loading: false,
   user: null,
 };
 
-export const authSlice = createSlice({
+const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
@@ -17,8 +23,7 @@ export const authSlice = createSlice({
     getUserData: (state, action) => {
       state.user = action.payload;
     },
-    setLogout: (state) => {
-      window.localStorage.removeItem('anylearn-token');
+    setLogout: (state, action) => {
       state.user = null;
     },
   },
