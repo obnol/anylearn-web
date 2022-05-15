@@ -4,7 +4,8 @@ import Dummy from '../../dummy.json'
 import { FiFilter } from 'react-icons/fi';
 import Animated from "../../commons/Animated";
 import { Route } from "react-router-dom";
-var Categories = ["Idiomas","Habilidades Personales","Tecnología","Historia y Antropología",
+
+const Categories = ["Idiomas","Habilidades Personales","Tecnología","Historia y Antropología",
                     "Sostenibilidad","Comunicación","Arte y Diseño","Ciencias Médicas","Finanzas"];
 
                     //const Duration = ["1 mes","6 meses","1 año"]
@@ -35,7 +36,6 @@ const onValueChange = (event) => {
 const handleSumbit = (event) => {
     //Añadir los filtros a la query del enlace
     //?distance=%2Cduration=%2Ccategories
-    var hex = "";
     let query = "?distance="+submitValues.distance+"%2Cduration="+submitValues.duration;
         if (submitValues.category.find((cat) => {
             return cat == true; //si hay algún valor marcado, lo encuentra
@@ -46,30 +46,24 @@ const handleSumbit = (event) => {
                 if (submitValues.category[key]) 
                 {
                     cat += Categories[key] + "&";
-                    hex += "1";
                 }
-                else hex += "0";
             }
-            console.log(hex);
             query += (cat.slice(0,cat.length-1));
-            hex = parseInt(hex,2).toString(16);
-            console.log(hex);
-        }
-        else{
-            hex = 0;
         }
     console.log("Resulting query: "+query);
     let URL = window.location.href.split("?");
     window.location.href = URL[0]+query;
 };
 
-const Filters = (props) => {
-    const [display, setDisplay] = useState(props.values.distance === undefined);
+const Filters = () => {
+    const [display, setDisplay] = useState(true);
     return (
         <>
             <div
                 className='btn h-8 w-24 m-5 border-primary border-2 px-2 py-1 text-xl cursor-pointer rounded-xl border-[#293241] bg-white-100'
-                onClick={() => setDisplay(!display)}
+                onClick={() => setDisplay( () => {
+                    return !display}
+                )}
             >
                 <div className='flex justify-center items-end'>
                     <FiFilter />
