@@ -11,6 +11,15 @@ const logIn = async (email, password) => {
 };
 
 const getUserData = (token) => {
+  if (token === 'fake-centro-token') {
+    return {
+      email: 'anylearn@formaccio.net',
+      name: 'Formacció',
+      avatar: '/formaccio-logo.png',
+      token: 'fake-centro-token',
+    };
+  }
+
   const data = {
     email: 'longboqiu@gmail.com',
     name: 'Longbo',
