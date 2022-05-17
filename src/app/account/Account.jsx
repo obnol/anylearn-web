@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import Avatar from './components/Avatar';
-import Curso from './components/Curso';
+import Curso from '../commons/Curso';
 import { BsBookmark } from 'react-icons/bs';
 
 const courses = [

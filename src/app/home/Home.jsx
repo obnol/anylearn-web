@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { authService } from '../../services/auth';
 import Introduction from './components/Introduction';
 import { useNavigate } from 'react-router-dom';
-import Animated from '../commons/Animated';
+// import Animated from '../commons/Animated';
 
 import Dummy from '../dummy.json';
 
@@ -31,11 +31,17 @@ const popularCategories = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector(({ auth }) => auth.user);
 
   useEffect(() => {
     const token = localStorage.getItem('anylearn-token');
+
+    if (token === 'fake-centro-token') {
+      navigate('/centro');
+    }
+
     if (token && !user) {
       const response = authService.getUserData(token);
       dispatch(getUserData(response));
@@ -63,11 +69,11 @@ const Home = () => {
     const navigate = useNavigate();
     return (
       <div
-        className='flex h-10 bg-white  rounded-lg my-3 border-solid border-[#3D5A80] border'
-        onClick={() => navigate('/login')}
+        className='flex h-10 bg-white  rounded-lg my-3 border-solid border-anylearn-blue-dark border'
+        onClick={() => navigate('/login-centro')}
       >
         <div className='flex h-full w-full justify-center items-center'>
-          <p className='font-medium text-sm text-[#3D5A80]'>
+          <p className='font-medium text-sm text-anylearn-blue-dark'>
             Inicia sesión como centro formativo
           </p>
         </div>
