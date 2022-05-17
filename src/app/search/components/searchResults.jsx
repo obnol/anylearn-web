@@ -24,8 +24,8 @@ const updateResult = (props) => {
         }
         else hex += "0";
     }
-    hex = parseInt(hex, 2).toString(16);
-    //result = SearchService.getSearchResult(data);
+    hex = parseInt(hex, 2).toString(10);
+    result = SearchService.getSearchResult(data);
 }
 
 const SearchResults = (props) => {

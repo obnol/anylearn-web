@@ -20,6 +20,10 @@ const submitValues =
 
 const onValueChange = (event) => {
     if (event.target.name === "distance") {
+        if (submitValues.distance === event.target.value)
+        {
+            submitValues.distance = !submitValues.distance;
+        }
         submitValues.distance = event.target.value;
         console.log(submitValues.distance);
     }
@@ -80,9 +84,9 @@ const Filters = () => {
                                     <div>
                                         <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value={20} id="distance0" />
-                                            <label className="form-check-label inline-block font-medium text-sm text-black">
-                                                Menos de 20 kilómetros
-                                            </label>
+                                                <label className="form-check-label inline-block font-medium text-sm text-black">
+                                                    Menos de 20 kilómetros
+                                                </label>
                                         </div>
                                         <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value={200} id="distance1" />

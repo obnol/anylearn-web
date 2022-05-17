@@ -4,7 +4,7 @@ const baseURL = 'https://vgafib.org:9091/';
 
 const getSearchResult = async (params) => {
     console.log(params);
-    let URL = baseURL + "?distance="+params.distance+"%2Cduration="+params.duration+"%2Ccategories="+params.categories;
+    let URL = baseURL + "?distance="+params.distance+"&duration="+params.duration+"&categories="+params.categories;
     const response = await axios({
         url: URL,
         method: 'GET',
