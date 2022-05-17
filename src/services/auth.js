@@ -1,16 +1,21 @@
-import axios from 'axios';
-
-const API = '';
+import API from './API';
 
 const logIn = async (email, password) => {
-  // return axios.post(`${API}/login`, {
-  //   email,
-  //   password,
-  // });
-  return { status: 200 };
+  return await API.post('/users/login', {
+    email,
+    password,
+  });
 };
 
-const getUserData = (token) => {
+const signUp = async (params) => {
+  try {
+    return await API.post('/users', params);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const getUserData = async (token) => {
   if (token === 'fake-centro-token') {
     return {
       email: 'anylearn@formaccio.net',
@@ -20,14 +25,11 @@ const getUserData = (token) => {
     };
   }
 
-  const data = {
-    email: 'longboqiu@gmail.com',
-    name: 'Longbo',
-    lastName: 'Qiu',
-    avatar: 'https://picsum.photos/200',
-    token,
-  };
-  return data;
+  try {
+    return await API.get(`/users/${token}`);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
-export const authService = { logIn, getUserData };
+export const authService = { logIn, signUp, getUserData };
