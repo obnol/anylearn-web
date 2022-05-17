@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-const API = '';
+const API = 'https://vgafib.org:9091/mock/start';
 
 const logIn = async (email, password) => {
-  // return axios.post(`${API}/login`, {
-  //   email,
-  //   password,
-  // });
+   return axios.post(API, {
+     email,
+     password,
+   });
   return { status: 200 };
 };
 
