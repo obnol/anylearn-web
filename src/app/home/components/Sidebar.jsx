@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IoIosArrowForward } from 'react-icons/io';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setLogout } from '../../../store/auth';
+import { logout } from '../../../store/auth';
 
 const areas = [
   {
@@ -57,7 +57,7 @@ const Sidebar = () => {
       <div
         className='flex w-full h-10 justify-center items-center rounded-lg'
         onClick={() => {
-          dispatch(setLogout());
+          dispatch(logout());
           setShowSidebar(false);
         }}
       >
