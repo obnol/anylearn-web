@@ -25,12 +25,9 @@ const readQuery = () => {
             {
                 let cats = variables[2].split("=")[1];
                 props.categories = cats.split("&");
-                console.log(props.categories);
             }
         }
-        //console.log(variables);
     }
-    console.log(props)
     return props;
 }
 

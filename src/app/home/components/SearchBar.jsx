@@ -1,6 +1,13 @@
 import React from 'react';
 import { FiSearch } from 'react-icons/fi';
 
+var textSearch;
+
+const onSearchBarChange = (event) =>
+{
+  textSearch = event.target.value;
+}
+
 const SearchBar = () => {
   return (
     <div className='flex justify-center items-center h-14 bg-[#FFF1F3] mx-5 rounded-lg mt-5'>
@@ -8,6 +15,7 @@ const SearchBar = () => {
         type='text'
         className='bg-[#FFF1F3] w-full px-5 border-0 focus:ring-0'
         placeholder='Economia'
+        onChange={onSearchBarChange}
       />
       <FiSearch className='mr-5 text-xl' />
     </div>

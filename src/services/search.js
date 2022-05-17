@@ -1,6 +1,6 @@
 import axios from "axios";
 
-var baseURL = 'https://vgafib.org:9091/search';
+const baseURL = 'https://vgafib.org:9091/';
 
 const getSearchResult = async (params) => {
     console.log(params);

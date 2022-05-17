@@ -78,19 +78,19 @@ const Filters = () => {
                                 </div>
                                 <div className="flex justify-center" onChange={onValueChange}>
                                     <div>
-                                        <div className="form-check">
+                                        <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value={20} id="distance0" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 Menos de 20 kilómetros
                                             </label>
                                         </div>
-                                        <div className="form-check">
+                                        <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value={200} id="distance1" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 Menos de 200 kilómetros
                                             </label>
                                         </div>
-                                        <div className="form-check">
+                                        <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value={Number.MAX_VALUE} id="distance2" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 Más de 200 kilómetros
@@ -103,32 +103,32 @@ const Filters = () => {
                                 </div>
                                 <div className="flex justify-center" onChange={onValueChange}>
                                     <div>
-                                        <div className="form-check">
+                                        <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio"  value={1} id="duration0" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 1 mes
                                             </label>
                                         </div>
-                                        <div className="form-check">
+                                        <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value={3} id="duration1" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 3 meses
                                             </label>
                                         </div>
-                                        <div className="form-check">
+                                        <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value={6} id="duration2" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 6 meses
                                             </label>
                                         </div>
-                                        <div className="form-check">
+                                        <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value={12} id="duration3" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 1 año
                                             </label>
                                             
                                         </div>
-                                        <div className="form-check">
+                                        <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="duration" type="radio" value={Number.MAX_VALUE} id="duration4" />
                                             <label className="form-check-label inline-block font-medium text-sm text-black">
                                                 Más de 1 año
@@ -144,7 +144,7 @@ const Filters = () => {
                                     <div>
                                         {
                                             Categories.map((item, key) => (
-                                                <div className="form-check justify-center" key={key}>
+                                                <div className="form-check justify-center mb-2" key={key}>
                                                     <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name="category" value={item} id={key} />
                                                     <label className="form-check-label inline-block font-medium text-sm text-black">
                                                         {item}
@@ -161,7 +161,9 @@ const Filters = () => {
                                 </div>
                             </div>
                     ) : (
-                        <></>
+                            <div className="flex h-full w-full justify-center items-center mb-5 text-black font-medium text-m">
+                                Resultados de tu búsqueda
+                            </div>
                     )
                 }
             </div>
