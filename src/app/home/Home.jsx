@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Header from './components/Header';
-import Category from './components/Category';
+import {Category} from './components/Category';
 import PopularCategories from './components/PopularCategories';
 import { getUserData } from '../../store/auth';
 import { useDispatch, useSelector } from 'react-redux';

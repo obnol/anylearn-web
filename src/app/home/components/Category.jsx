@@ -31,4 +31,4 @@ const Category = ({ category }) => {
   );
 };
 
-export default Category;
+export { Category, Item };

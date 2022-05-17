@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { authService } from '../services/auth';
 
+export const register = (params) => async (dispatch) => {
+  const response = await authService.signUp(params);
+  console.log(response);
+};
+
 export const logout = () => (dispatch) => {
   console.log('in action');
   window.localStorage.removeItem('anylearn-token');
