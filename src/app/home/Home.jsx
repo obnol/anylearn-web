@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
 import Header from './components/Header';
-import {Category} from './components/Category';
+import { Category } from './components/Category';
 import PopularCategories from './components/PopularCategories';
 import { getUserData } from '../../store/auth';
 import { useDispatch, useSelector } from 'react-redux';
-import { authService } from '../../services/auth';
 import Introduction from './components/Introduction';
 import { useNavigate } from 'react-router-dom';
-// import Animated from '../commons/Animated';
 
 import Dummy from '../dummy.json';
 
@@ -43,8 +41,7 @@ const Home = () => {
     }
 
     if (token && !user) {
-      const response = authService.getUserData(token);
-      dispatch(getUserData(response));
+      dispatch(getUserData(token));
     }
     // eslint-disable-next-line
   }, []);

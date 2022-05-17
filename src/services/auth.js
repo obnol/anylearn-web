@@ -15,7 +15,7 @@ const signUp = async (params) => {
   }
 };
 
-const getUserData = (token) => {
+const getUserData = async (token) => {
   if (token === 'fake-centro-token') {
     return {
       email: 'anylearn@formaccio.net',
@@ -25,14 +25,11 @@ const getUserData = (token) => {
     };
   }
 
-  const data = {
-    email: 'longboqiu@gmail.com',
-    name: 'Longbo',
-    lastName: 'Qiu',
-    avatar: 'https://picsum.photos/200',
-    token,
-  };
-  return data;
+  try {
+    return await API.get(`/users/${token}`);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const authService = { logIn, signUp, getUserData };
