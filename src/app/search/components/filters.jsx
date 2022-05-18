@@ -40,19 +40,22 @@ const onValueChange = (event) => {
 const handleSumbit = (event) => {
     //Añadir los filtros a la query del enlace
     //?distance=%2Cduration=%2Ccategories
-    let query = "?distance="+submitValues.distance+"%2Cduration="+submitValues.duration;
+    let query = "?distance="+submitValues.distance+"&duration="+submitValues.duration;
         if (submitValues.category.find((cat) => {
             return cat == true; //si hay algún valor marcado, lo encuentra
         }))
         {
-            let cat = "%2Ccategories=";
+            query += "&categories="
+            let catMask = "";
             for (const key in Categories) {
                 if (submitValues.category[key]) 
                 {
-                    cat += Categories[key] + "&";
+                    catMask += "1";
                 }
+                else catMask += "0";
             }
-            query += (cat.slice(0,cat.length-1));
+            catMask = parseInt(catMask, 2).toString(10);
+            query += catMask;
         }
     console.log("Resulting query: "+query);
     let URL = window.location.href.split("?");
