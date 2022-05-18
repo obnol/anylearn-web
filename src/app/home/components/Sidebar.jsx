@@ -7,11 +7,11 @@ import { setLogout } from '../../../store/auth';
 const areas = [
   {
     name: 'Idiomas',
-    value: 'idiomas',
+    value: '512',
   },
   {
     name: 'Habilidades Personales',
-    value: 'habilidades-personales',
+    value: '256',
     examples: [
       'Psicología',
       'Comunicación',
@@ -21,7 +21,7 @@ const areas = [
   },
   {
     name: 'Tecnología',
-    value: 'tecnologia',
+    value: '128',
     examples: [
       'Inteligencia Artificial',
       'Ciberseguridad',
@@ -31,16 +31,16 @@ const areas = [
   },
   {
     name: 'Administración de Empresas',
-    value: 'administracion-empresas',
+    value: '1',
     examples: ['Marketing', 'Finanzas', 'Gestión de Proyectos'],
   },
   {
     name: 'Sostenibilidad y Medio Ambiente',
-    value: 'sostenibilidad',
+    value: '32',
   },
   {
     name: 'Historia y Antropología',
-    value: 'historia-antropologia',
+    value: '64',
   },
 ];
 
@@ -118,7 +118,7 @@ const Sidebar = () => {
             <div className='flex flex-col my-1'>
               <section
                 className='flex flex-row justify-between items-center'
-                onClick={() => navigate(`/search?${area.value}`)}
+                onClick={() => navigate(`/search?distance=0&duration=0&categories=${area.value}`)}
               >
                 <p className='font-semibold'>{area.name}</p>
                 <IoIosArrowForward className='text-xl fill-[#EE6C4D]' />
