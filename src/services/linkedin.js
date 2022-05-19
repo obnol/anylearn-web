@@ -1,29 +1,35 @@
 import axios from 'axios';
 
-const getAccessToken = async (code) => {
-  return await axios({
-    url: 'https://www.linkedin.com/oauth/v2/accessToken',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    params: {
-      grant_type: 'authorization_code',
-      code,
-      redirect_uri: 'http://localhost:3000/linkedin',
-      client_id: '78skdzmjsq9y4b',
-      client_secret: 'wX7RFsMVbMkHzzcH',
-    },
-    proxy: {
-      protocol: 'https',
-      host: 'smartproxy.rnet.works',
-      port: 7000,
-      auth: {
-        username: 'user-RPG_GIywCRXqSh-country-ES-session-RLltzuqlrBweOBWp',
-        password: 'G485uiJTMM',
-      },
-    },
-  });
+const login = async (code) => {
+  try {
+    const response = await axios({
+      url: `https://vgafib.org:9090/users/${code}`,
+      method: 'POST',
+    });
+    console.log(response);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
-export const linkedinService = { getAccessToken };
+export const linkedinService = { login };
+
+/*
+import axios from 'axios';
+
+const login = async (code) => {
+  try {
+    const response = await axios({
+      url: `https://vgafib.org:9091/users/${code}`,
+      method: 'POST',
+    });
+    console.log(response);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const linkedinService = { login };
+*/

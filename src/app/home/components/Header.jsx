@@ -1,47 +1,33 @@
 import React from 'react';
-import logo from '../../../assets/header-regular.png';
 import { useNavigate } from 'react-router-dom';
+import Sidebar from './Sidebar';
+import { FiSearch } from 'react-icons/fi';
+
+const SearchButton = () => {
+  const navigate = useNavigate();
+  return (
+    <div
+      className='flex rounded-lg h-6 w-8'
+      onClick={() => navigate('/search')}
+    >
+      <div className='flex w-full h-full justify-center items-center'>
+        <FiSearch className='text-[#3D5A80] text-xl' />
+      </div>
+    </div>
+  );
+};
 
 const Header = () => {
-  const navigate = useNavigate();
-  const logged = false;
-
   return (
-    <>
-      <div className='flex flex-row justify-between mt-5 mx-5'>
-        <div className='h-11'>
-          <img className='h-full' src={logo} alt='' />
+    <header className='flex flex-col sticky top-0 z-50 bg-white border-2 border-b-anylearn-blue-dark'>
+      <div className='flex flex-row justify-between items-center m-4'>
+        <Sidebar />
+        <div className='h-7'>
+          <img className='h-full' src='/logo-svg-color-small.png' alt='logo' />
         </div>
-        <div
-          className='flex h-8 w-24 bg-blue-500  rounded-lg'
-          onClick={() => navigate('/login')}
-        >
-          <div className='flex h-full w-full justify-center items-center'>
-            <p className='font-medium text-sm text-white'>Log In</p>
-          </div>
-        </div>
+        <SearchButton />
       </div>
-
-      {logged && (
-        <div className='px-5 pt-5'>
-          <div className='flex flex-row h-16 justify-between'>
-            <div className='flex flex-col w-3/4'>
-              <p className='font-medium text-2xl'>¡Hola, Longbo!</p>
-              <p className='font-light text-slate-500'>
-                ¿Qué te gustaría aprender?
-              </p>
-            </div>
-            <div className='flex w-1/4'>
-              <img
-                className='h-full rounded-full'
-                src='https://picsum.photos/200'
-                alt=''
-              />
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+    </header>
   );
 };
 
