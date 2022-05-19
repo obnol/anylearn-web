@@ -24,7 +24,6 @@ const readQuery = () => {
             props.duration = (variables[1].split("="))[1];
             if (variables.length > 2)
             {
-                console.log(variables);
                 props.categories = variables[2].split("=")[1];
             }
         }
