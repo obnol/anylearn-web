@@ -3,7 +3,7 @@ import SearchBar from '../home/components/SearchBar';
 import Filters from './components/filters';
 import Animated from '../commons/Animated';
 import SearchResults from './components/searchResults';
-import Header from '../home/components/Header';
+import Header from './components/Header';
 
 var hasOptions = false;
 
