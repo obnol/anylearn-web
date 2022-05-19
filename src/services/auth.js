@@ -8,11 +8,7 @@ const logIn = async (email, password) => {
 };
 
 const signUp = async (params) => {
-  try {
-    return await API.post('/users', params);
-  } catch (error) {
-    console.error(error);
-  }
+  return await API.post('/users', params);
 };
 
 const getUserData = async (token) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setUserData } from '../../store/auth';
@@ -9,16 +9,21 @@ const LogInCentro = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+
   const handleLogin = () => {
-    dispatch(
-      setUserData({
-        email: 'anylearn@formaccio.net',
-        name: 'Formacció',
-        avatar: '/formaccio-logo.png',
-        token: 'fake-centro-token',
-      })
-    );
-    navigate('/centro');
+    if (email === 'anylearn@formaccio.net' && password === 'anylearn') {
+      dispatch(
+        setUserData({
+          email: 'anylearn@formaccio.net',
+          name: 'Formacció',
+          avatar: '/formaccio-logo.png',
+          token: 'fake-centro-token',
+        })
+      );
+      navigate('/centro');
+    }
   };
 
   return (
@@ -37,11 +42,13 @@ const LogInCentro = () => {
           type='email'
           className=' form-input w-full block border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black'
           placeholder='anylearn@upc.edu'
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type='password'
           className=' form-input w-full mt-5 block border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black'
           placeholder='*************'
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <div
