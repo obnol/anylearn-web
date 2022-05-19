@@ -20,6 +20,10 @@ const submitValues =
 
 const onValueChange = (event) => {
     if (event.target.name === "distance") {
+        if (submitValues.distance === event.target.value)
+        {
+            submitValues.distance = !submitValues.distance;
+        }
         submitValues.distance = event.target.value;
         console.log(submitValues.distance);
     }
@@ -36,19 +40,22 @@ const onValueChange = (event) => {
 const handleSumbit = (event) => {
     //Añadir los filtros a la query del enlace
     //?distance=%2Cduration=%2Ccategories
-    let query = "?distance="+submitValues.distance+"%2Cduration="+submitValues.duration;
+    let query = "?distance="+submitValues.distance+"&duration="+submitValues.duration;
         if (submitValues.category.find((cat) => {
             return cat == true; //si hay algún valor marcado, lo encuentra
         }))
         {
-            let cat = "%2Ccategories=";
+            query += "&categories="
+            let catMask = "";
             for (const key in Categories) {
                 if (submitValues.category[key]) 
                 {
-                    cat += Categories[key] + "&";
+                    catMask += "1";
                 }
+                else catMask += "0";
             }
-            query += (cat.slice(0,cat.length-1));
+            catMask = parseInt(catMask, 2).toString(10);
+            query += catMask;
         }
     console.log("Resulting query: "+query);
     let URL = window.location.href.split("?");
@@ -80,9 +87,9 @@ const Filters = () => {
                                     <div>
                                         <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value={20} id="distance0" />
-                                            <label className="form-check-label inline-block font-medium text-sm text-black">
-                                                Menos de 20 kilómetros
-                                            </label>
+                                                <label className="form-check-label inline-block font-medium text-sm text-black">
+                                                    Menos de 20 kilómetros
+                                                </label>
                                         </div>
                                         <div className="form-check mb-2">
                                             <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D5A80] checked:border-[#3D5A80] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" name="distance" type="radio" value={200} id="distance1" />

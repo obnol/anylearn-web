@@ -13,11 +13,9 @@ const Introduction = () => {
           <p>time</p>
         </TextLoop>
       </div>
-      <p className='flex mx-6 my-5 text-justify'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-        consequatur dolor aliquam expedita aut dolore? Iure voluptas excepturi
-        soluta aperiam, modi in cum minima autem, necessitatibus dolor
-        accusantium repellat amet.
+      <p className='flex mx-6 my-5 text-center'>
+      Empezar tu aventura académica nunca había sido tan sencillo. 
+      Explora nuestro amplio catálogo de experiencias formativas ahora
       </p>
     </div>
   );
