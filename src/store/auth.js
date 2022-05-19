@@ -2,22 +2,31 @@ import { createSlice } from '@reduxjs/toolkit';
 import { authService } from '../services/auth';
 
 export const register = (params) => async (dispatch) => {
-  dispatch(updateAuthStore({ loading: true }));
-  const response = await authService.signUp(params);
-  if (response.status === 200) {
-    dispatch(setUserData(response.data));
-    updateAuthStore({ loading: false });
-    dispatch(setValue({ registerSuccess: true }));
+  dispatch(setValue({ loading: true }));
+  try {
+    const response = await authService.signUp(params);
+    if (response.status === 200) {
+      dispatch(setUserData(response.data));
+      dispatch(setValue({ loading: false }));
+      dispatch(setValue({ registerSuccess: true }));
+    }
+  } catch (error) {
+    console.log(error);
+    dispatch(setValue({ loading: false }));
   }
 };
 
 export const logIn = (email, password) => async (dispatch) => {
-  dispatch(updateAuthStore({ loading: true }));
-  const response = await authService.logIn(email, password);
-  if (response.status === 200) {
-    dispatch(setUserData(response.data));
-    updateAuthStore({ loading: false });
-    dispatch(setValue({ loginSuccess: true }));
+  dispatch(setValue({ loading: true }));
+  try {
+    const response = await authService.logIn(email, password);
+    if (response.status === 200) {
+      dispatch(setUserData(response.data));
+      dispatch(setValue({ loading: false }));
+      dispatch(setValue({ loginSuccess: true }));
+    }
+  } catch (error) {
+    dispatch(setValue({ loading: false }));
   }
 };
 

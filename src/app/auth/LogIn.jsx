@@ -19,8 +19,8 @@ const fakeService = (code) => {
 };
 
 const LogIn = () => {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -47,9 +47,9 @@ const LogIn = () => {
   });
 
   const handleLogin = async () => {
+    setEmail('');
+    setPassword('');
     dispatch(logIn(email, password));
-    setEmail(null);
-    setPassword(null);
   };
 
   useEffect(() => {
