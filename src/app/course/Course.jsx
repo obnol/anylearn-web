@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CourseInfo from './components/CourseInfo';
 import Header from './components/Header';
+import { useParams } from 'react-router-dom';
 
 const Course = () => {
+  const { courseId } = useParams();
+
+  useEffect(() => {
+    // get course info from API call
+
+    
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <>
       <Header />
