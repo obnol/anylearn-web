@@ -16,6 +16,8 @@ function App() {
       <Route exact path='/linkedin' element={<LinkedInCallback />} />
       <Route exact path='/account' element={<Account />} />
       <Route exact path='/course/:courseId' element={<Course />} />
+      <Route exact path='/course/:courseId/accommodations' element={<Course />} />
+      <Route exact path='/course/:courseId/activities' element={<Course />} />
     </Routes>
   );
 }
