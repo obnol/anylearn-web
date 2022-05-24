@@ -1,0 +1,42 @@
+{
+    "courses": 
+    [
+      {
+        "title": "Curso de Arte y diseño en publicidad",
+        "id": 0,
+        "category": "Diseño",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de gestión de equipo",
+        "id": 1,
+        "category": "Liderazgo",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de psicología conductual",
+        "id": 2,
+        "category": "Habilidades Personales",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de Coreano",
+        "id": 3,
+        "category": "Idiomas",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "Curso de ciberseguridad",
+        "id": 4,
+        "category": "Tecnología",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      }
+    ]
+}
+
+

@@ -9,7 +9,7 @@ const Item = ({ item }) => {
       className='flex flex-col shrink-0 w-44'
       onClick={() => navigate('/course/1')}
     >
-      <img className='h-4/6 rounded-md' src={item.image} alt='' />
+      <img className='h-4/6 rounded-md' src={`https://picsum.photos/id/${Math.floor((Math.random()*40)+1000)}/200/200`} alt='' />
       <p className='h-2/6 text-base font-light'>{item.title}</p>
     </div>
   );
@@ -31,4 +31,4 @@ const Category = ({ category }) => {
   );
 };
 
-export default Category;
+export { Category, Item };
