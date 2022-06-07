@@ -1,37 +1,39 @@
-import React from 'react';
-import Accomodation from './Accomodation';
+import React from "react";
+import Accomodation from "./Accomodation";
+import Activity from "./Activity";
+import { useNavigate } from "react-router-dom";
 
 const accomodations = [
   {
-    img: 'https://picsum.photos/300',
-    name: 'Sarrià Apartments',
+    img: "https://picsum.photos/306",
+    name: "Camden Apartments",
     price: {
       amount: 1500,
-      period: 'mes',
+      period: "mes",
     },
     valoration: {
-      points: '8,9',
-      quality: 'Fabuloso',
+      points: "8,9",
+      quality: "Fabuloso",
       comments: 212,
     },
-    location: 'Barcelona',
-    description: '2 dormitorios · 1 sala de estar · 1 baño · 1 cocina',
+    location: "Londres",
+    description: "2 dormitorios · 1 sala de estar · 1 baño · 1 cocina",
   },
   {
-    img: 'https://picsum.photos/300',
-    name: 'Stylish Aparments',
+    img: "https://picsum.photos/305",
+    name: "Southwark Accomodations",
     price: {
       amount: 1000,
-      period: 'mes',
+      period: "mes",
     },
     valoration: {
-      points: '7,6',
-      quality: 'Bien',
+      points: "7,6",
+      quality: "Bien",
       comments: 123,
     },
-    location: 'Badalona',
-    description: '2 habitaciones · 1 sala de estar · 1 baño · 1 cocina',
-  },
+    location: "londres",
+    description: "2 habitaciones · 1 sala de estar · 1 baño · 1 cocina",
+  } /*,
   {
     img: 'https://picsum.photos/300',
     name: 'Teh Central Place',
@@ -92,24 +94,76 @@ const accomodations = [
     },
     location: 'Barcelona',
     description: '2 dormitorios · 1 sala de estar · 1 baño · 1 cocina',
+  },*/,
+];
+
+const activities = [
+  {
+    img: "https://picsum.photos/301",
+    name: "Visita guiada museo",
+    price: {
+      amount: 1500,
+      period: "mes",
+    },
+    valoration: {
+      points: "9,2",
+      quality: "Aprendizaje",
+      comments: 54,
+    },
+    location: "Londres",
+    description: "2 dormitorios · 1 sala de estar · 1 baño · 1 cocina",
   },
+  {
+    img: "https://picsum.photos/300",
+    name: "Salida al parque natural",
+    price: {
+      amount: 1000,
+      period: "mes",
+    },
+    valoration: {
+      points: "8,8",
+      quality: "Relajante",
+      comments: 21,
+    },
+    location: "Londres",
+    description: "2 habitaciones · 1 sala de estar · 1 baño · 1 cocina",
+  }
 ];
 
 const ExperienceTab = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <div className='text-center mb-2'>
-        <p className=' text-xl'>
-          Alojamiento en <span className='font-bold'>Barcelona</span>
+      <div className="text-center mb-2">
+        <p className=" text-2xl">
+          Alojamiento en <span className="font-bold">Londres</span>
         </p>
-        <p className='text-xs'>
-          Powered by <span className='font-bold text-[#23387E]'>Booking</span>
+        <p className="text-xs">
+          Powered by <span className="font-bold text-[#23387E]">Booking</span>
         </p>
       </div>
-      <div className='flex flex-col'>
-        {accomodations.map((accomodation) => (
-          <Accomodation key={accomodation.name} {...accomodation} />
-        ))}
+      <div className="flex flex-col relative">
+        <Accomodation key={accomodations[0].name} {...accomodations[0]} />
+        <Accomodation key={accomodations[1].name} {...accomodations[1]} />
+        <div className="h-40 w-full absolute bottom-0 z-30 bg-gradient-to-t from-white"></div>
+        <div className="w-full absolute bottom-4 z-40 text-xl font-bold text-anylearn-blue-dark text-center" onClick={() => navigate(`/course/1/accommodations`)} >
+          Ver más alojamientos...
+        </div>
+      </div>
+
+      <div className="text-center my-2">
+        <p className=" text-2xl">
+          Actividades en <span className="font-bold">Londres</span>
+        </p>
+      </div>
+      <div className="flex flex-col relative">
+        <Activity key={activities[0].name} {...activities[0]} />
+        <Activity key={activities[1].name} {...activities[1]} />
+        <div className="h-40 w-full absolute bottom-0 z-30 bg-gradient-to-t from-white"></div>
+        <div className="w-full absolute bottom-4 z-40 text-xl font-bold text-anylearn-blue-dark text-center" onClick={() => navigate(`/course/1/accommodations`)} >
+          Ver más actividades...
+        </div>
       </div>
     </>
   );

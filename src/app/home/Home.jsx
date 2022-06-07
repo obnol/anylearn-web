@@ -12,18 +12,22 @@ import Dummy from '../dummy.json';
 const popularCategories = [
   {
     title: 'Economía',
+    id: 5,
     image: 'https://picsum.photos/200',
   },
   {
     title: 'Ciencias naturales',
+    id: 5,
     image: 'https://picsum.photos/200',
   },
   {
     title: 'Ingeniería',
+    id: 5,
     image: 'https://picsum.photos/200',
   },
   {
     title: 'Arte',
+    id: 5,
     image: 'https://picsum.photos/200',
   },
 ];

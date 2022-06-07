@@ -16,6 +16,7 @@ const Signup = () => {
   const loading = useSelector(({ auth }) => auth.loading);
   const registerSuccess = useSelector(({ auth }) => auth.registerSuccess);
 
+  const [GDPR, setGDPR] = useState(false);
   const [form, setForm] = useState(false);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
@@ -30,7 +31,7 @@ const Signup = () => {
   }, [registerSuccess]);
 
   const handleSignUp = async () => {
-    if (email && password && name && surname) {
+    if (email && password && name && surname && GDPR) {
       dispatch(register({ email, password, name, surname }));
     }
   };
@@ -131,6 +132,13 @@ const Signup = () => {
               className='form-input w-full block border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black'
               placeholder='confirmar contraseña'
             />
+              <p className="flex justify-center items-center pt-5 text-slate-500 text-xs text-center form-check mt-5" onChange={(e) => setGDPR(!GDPR)}>
+                <input className="form-check-input appearance-none h-5 w-5 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name="category" />
+                <label className="form-check-label inline-block font-medium text-sm text-black">
+                  Confirmo que he leído y acepto la Política de Privacidad.
+                  <span className="text-blue-600">Léela Aquí</span>
+                </label>
+              </p> 
           </div>
           <div
             className='h-14 bg-blue-500 mt-16 mx-16 rounded-lg'
@@ -164,10 +172,6 @@ const Signup = () => {
           </div>
         </>
       )}
-
-      <p className='flex justify-center items-center pt-5 mx-20 text-slate-500 text-xs text-center'>
-        Al registrarte, aceptas nuestras condiciones.
-      </p>
     </>
   );
 };
