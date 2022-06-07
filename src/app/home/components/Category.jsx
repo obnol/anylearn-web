@@ -3,13 +3,23 @@ import { useNavigate } from 'react-router-dom';
 
 const Item = ({ item }) => {
   const navigate = useNavigate();
-
+  var isRandom;
+  if (item.id > 4)
+  {
+    isRandom = true;
+  }
   return (
     <div
       className='flex flex-col shrink-0 w-44'
       onClick={() => navigate('/course/1')}
     >
+      {
+    isRandom ? (
       <img className='h-4/6 rounded-md' src={`https://picsum.photos/id/${Math.floor((Math.random()*40)+1000)}/200/200`} alt='' />
+    ) : (
+      <img className='h-4/6 rounded-md' src={item.image} alt='' />
+    )
+    }
       <p className='h-2/6 text-base font-light'>{item.title}</p>
     </div>
   );

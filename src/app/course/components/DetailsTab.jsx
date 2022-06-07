@@ -3,66 +3,78 @@ import React from 'react';
 const DetailsTab = () => {
   return (
     <div className='mt-3 text-justify leading-5 pb-5'>
-      <p className='font-bold mb-2'>Introducción</p>
+      <p className='font-bold mb-2'>Descripción:</p>
       <p className='font-light'>
-        El Grado en Ingeniería Informática, se imparte en la FIB desde el mes de
-        septiembre de 2010 y proporciona conocimientos, habilidades y
-        competencias necesarios para trabajar en el campo de la ingenieria
-        informática.
+        Progresa al máximo durante tu
+        estancia en el extranjero. Muy
+        recomendado para estudiantes
+        que desean aprender un idioma
+        lo más rápido posible para fines
+        académicos y profesionales.
       </p>
-      <p className='font-light'>
-        Acreditado con excelencia por AQU Catalunya, te proporcionarán los
-        conocimientos necesarios para concebir, diseñar, desarrollar, mantener y
-        gestionar sistemas, servicios, aplicaciones y arquitecturas
-        informáticas, para conocer y aplicar la legislación necesaria, así como
-        adquirir experiencia en nuevos métodos y tecnologías del ámbito TIC.
-        Podrás escoger entre cinco menciones:
-      </p>
-      <br />
-      <p className='font-semibold mb-1'>Mención en Computación</p>
-      <p className='font-light'>
-        Adquirirás los fundamentos científicos y técnicos para el diseño de
-        soluciones eficientes a los retos de computación en inteligencia
-        artificial, bioinformática, realidad virtual y muchos otros ámbitos.
-      </p>
-      <br />
-      <p className='font-semibold mb-1'>
-        Mención en Ingeniería de Computadores
-      </p>
-      <p className='font-light'>
-        Te formarás en el diseño de computadores y dispositivos digitales que
-        integran hardware, software y comunicaciones: supercomputadores,
-        teléfonos móviles, reproductores mp3, equipamiento médico, robots o
-        sistemas de procesamiento de imagen.
+      <p className='font-light'>  
+      Nuestro programa de estudios
+        perfectamente estructurado
+        comprende 32 lecciones de
+        mañana y tarde a la semana
+        (con un total de 21 horas y 20
+        minutos). Hablarás y escribirás
+        con seguridad en el menor
+        tiempo. Nuestras lecciones de
+        idioma general fortalecerán
+        tu gramática y vocabulario;
+        mientras que las sesiones
+        de proyecto perfeccionarán
+        tus habilidades de
+        investigación y comunicación
+        a través de trabajos prácticos,
+        personalizados según tus
+        intereses.
       </p>
       <br />
-      <p className='font-semibold mb-1'>Mención en Ingeniería del Software</p>
+      <p className='font-semibold mb-1'>¿Por qué el EF Curso Intensivo
+es el más popular?</p>
       <p className='font-light'>
-        Aprenderás a construir sistemas software que responden a las necesidades
-        de los usuarios y las empresas, fiables y eficientes, y a gestionar a
-        las personas, los recursos y las etapas del proyecto desde la definición
-        de las necesidades del cliente hasta la construcción y el despliegue del
-        sistema.
-      </p>
-      <br />
-      <p className='font-semibold mb-1'>Mención en Sistemas de Información</p>
-      <p className='font-light'>
-        Te especializarás en la mejora de los procesos de las organizaciones con
-        el uso de tecnologías de la información para alcanzar sus estrategias y
-        sus objetivos, para que sean más eficientes, innovadoras y competitivas.
+        
+No solo maximizarás las
+posibilidades de mejorar tus
+habilidades lingüísticas, sino
+que además tendrás tiempo
+de practicar el idioma con otros
+estudiantes. Esta interacción te
+permitirá comunicarte de forma
+más rápida y natural que con
+otros cursos, ¡y a la vez harás
+amigos para toda la vida!
       </p>
       <br />
       <p className='font-semibold mb-1'>
-        Mención en Tecnologías de la Información
-      </p>
+      ¿Cuántas semanas se
+recomienda que dure el
+curso EF Intensivo?      </p>
       <p className='font-light'>
-        Te formarás en el diseño y la instalación de redes informáticas y de las
-        aplicaciones necesarias para satisfacer, de forma segura, las
-        necesidades de las organizaciones. Este grado ofrece también algunas
-        plazas en el marco de un Programa Académico de Recorrido Sucesivo (PARS)
-        de Ingeniero/a de Informático/a.
+        
+Está garantizado: cuanto
+más tiempo estudies, más
+aprenderás. Por este motivo,
+los estudiantes que buscan
+adquirir habilidades avanzadas
+se inscriben un mínimo de
+entre 3 y 6 semanas. Recuerda
+que los estudiantes de cursos
+intensivos progresan entre un
+25% y un 50% más rápido. En
+general, un curso de 6 semanas
+permite progresar un nivel
+entero de idioma, y muchos
+de los estudiantes de cursos
+intensivos eligen estudiar
+durante 3 meses para lograr
+un mayor dominio del idioma.
       </p>
+      <br />
     </div>
+
   );
 };
 
