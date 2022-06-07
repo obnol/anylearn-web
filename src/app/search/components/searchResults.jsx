@@ -7,7 +7,22 @@ import { Route } from "react-router-dom";
 import {Item} from "../../home/components/Category";
 
 var result;
-
+/*
+      {
+        "title": "Introducción al Mandarín",
+        "id": 3,
+        "category": "Idiomas",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      },
+      {
+        "title": "¡Prepárate para el B1 de Francés!",
+        "id": 4,
+        "category": "Idiomas",
+        "distance": "2km",
+        "image": "https://picsum.photos/200"
+      }
+      */
 const updateResult = (props) => {
     result = SearchService.getSearchResult(props.filters);
 }

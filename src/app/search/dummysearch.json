@@ -2,18 +2,18 @@
     "courses": 
     [
       {
-        "title": "Aprende Inglés en Londres",
+        "title": "Curso de Inglés B1",
         "id": 0,
         "category": "Idiomas",
         "distance": "2km",
         "image": "https://img2.storyblok.com/1164x655/filters:quality(75):focal(582x328:583x329):format(webp)/f/58806/1164x655/c584866a31/london_campusinterior_02_classroom_ef.jpg"
       },
       {
-        "title": "Curso introductorio intensivo de Coreano",
+        "title": "Curso introductorio intensivo de Inglés",
         "id": 1,
         "category": "Idiomas",
         "distance": "2km",
-        "image": "https://st3.depositphotos.com/3053449/13089/i/950/depositphotos_130898374-stock-photo-downtown-south-korea.jpg"
+        "image": "https://tse4.mm.bing.net/th?id=OIP.OvMqmBKj5revfPR1KUbMOQHaE8&pid=Api"
       },
       {
         "title": "Aprende Inglés en 1 mes",
@@ -21,21 +21,8 @@
         "category": "Idiomas",
         "distance": "2km",
         "image": "https://picsum.photos/200"
-      },
-      {
-        "title": "Introducción al Mandarín",
-        "id": 3,
-        "category": "Idiomas",
-        "distance": "2km",
-        "image": "https://picsum.photos/200"
-      },
-      {
-        "title": "¡Prepárate para el B1 de Francés!",
-        "id": 4,
-        "category": "Idiomas",
-        "distance": "2km",
-        "image": "https://picsum.photos/200"
       }
+      
     ]
 }
 

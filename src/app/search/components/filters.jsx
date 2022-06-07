@@ -63,7 +63,9 @@ const handleSumbit = (event) => {
 };
 
 const Filters = () => {
-    const [display, setDisplay] = useState(true);
+    let URL = window.location.href.split("?");
+    let length = URL.length;
+    const [display, setDisplay] = useState(length <= 1);
     return (
         <>
             <div
