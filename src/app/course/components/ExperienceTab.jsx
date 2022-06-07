@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const accomodations = [
   {
     img: "https://picsum.photos/306",
-    name: "Sarrià Apartments",
+    name: "Camden Apartments",
     price: {
       amount: 1500,
       period: "mes",
@@ -16,12 +16,12 @@ const accomodations = [
       quality: "Fabuloso",
       comments: 212,
     },
-    location: "Barcelona",
+    location: "Londres",
     description: "2 dormitorios · 1 sala de estar · 1 baño · 1 cocina",
   },
   {
     img: "https://picsum.photos/305",
-    name: "Stylish Aparments",
+    name: "Southwark Accomodations",
     price: {
       amount: 1000,
       period: "mes",
@@ -31,7 +31,7 @@ const accomodations = [
       quality: "Bien",
       comments: 123,
     },
-    location: "Badalona",
+    location: "londres",
     description: "2 habitaciones · 1 sala de estar · 1 baño · 1 cocina",
   } /*,
   {
@@ -110,7 +110,7 @@ const activities = [
       quality: "Aprendizaje",
       comments: 54,
     },
-    location: "Barcelona",
+    location: "Londres",
     description: "2 dormitorios · 1 sala de estar · 1 baño · 1 cocina",
   },
   {
@@ -125,7 +125,7 @@ const activities = [
       quality: "Relajante",
       comments: 21,
     },
-    location: "Badalona",
+    location: "Londres",
     description: "2 habitaciones · 1 sala de estar · 1 baño · 1 cocina",
   }
 ];
@@ -137,7 +137,7 @@ const ExperienceTab = () => {
     <>
       <div className="text-center mb-2">
         <p className=" text-2xl">
-          Alojamiento en <span className="font-bold">Barcelona</span>
+          Alojamiento en <span className="font-bold">Londres</span>
         </p>
         <p className="text-xs">
           Powered by <span className="font-bold text-[#23387E]">Booking</span>
@@ -154,7 +154,7 @@ const ExperienceTab = () => {
 
       <div className="text-center my-2">
         <p className=" text-2xl">
-          Actividades en <span className="font-bold">Barcelona</span>
+          Actividades en <span className="font-bold">Londres</span>
         </p>
       </div>
       <div className="flex flex-col relative">

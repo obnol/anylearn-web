@@ -18,17 +18,17 @@ const CourseInfo = () => {
             alt=''
           />
           <div>
-            <p className='font-medium'>Universitat Politècnica de Catalunya</p>
-            <p className='font-light'>Facultad de Informática de Barcelona</p>
+            <p className='font-medium'>Education First</p>
+            <p className='font-light'>Curso acreditado</p>
           </div>
         </div>
         <p className='font-semibold text-2xl mt-3'>
-          Grado de ingenieria informática
+          Curso de Inglés B1
         </p>
         <div className='flex flex-col mt-2 items-center text-slate-500'>
           <div className='flex flex-row w-full space-x-3'>
             <MdLocationCity className='text-xl' />
-            <p className='text-sm'>Barcelona, España</p>
+            <p className='text-sm'>Londres, Reino Unido</p>
           </div>
           <div className='flex flex-row space-x-16 mt-2 w-full'>
             <div className='flex flex-row space-x-3'>
@@ -37,7 +37,7 @@ const CourseInfo = () => {
             </div>
             <div className='flex flex-row space-x-3'>
               <GoLocation className='text-xl' />
-              <p className='text-sm'>A 245 Km</p>
+              <p className='text-sm'>A 1.138 Km</p>
             </div>
           </div>
         </div>
